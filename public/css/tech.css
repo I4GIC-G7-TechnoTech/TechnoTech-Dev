@@ -1,0 +1,78 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:400);
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,100);
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #eee;
+  font-family: Roboto,'Helvetica Neue', Helvetica, sans-serif;
+}
+
+div#menu-backend {
+    line-height: 7rem;
+    padding-left: 2rem;
+}
+
+div#navbar-backend {
+  padding-left: 0px !important;
+}
+
+nav {
+  position: fixed;
+  height: 100vh;
+  width: 19rem;
+  background: #555;
+  overflow: hidden;
+  transition: width .3s ease;
+}
+nav:hover, nav.pinned {
+  width: 23rem;
+}
+nav #logo {
+  background: #ff6600;
+  height: 7rem;
+  line-height: 4rem;
+  text-align: center;
+  padding-top: 1px;
+}
+nav a {
+  color: #EEE;
+  text-decoration: none !important;
+  display: table;
+  width: 23rem;
+}
+nav a.active .fa {
+  border-left: 3px solid #f60;
+  border-right: 3px solid transparent;
+  padding-left: 1rem;
+}
+nav a:hover {
+  background: #444;
+  color: #BEE0ff;
+}
+nav a .fa {
+  width: 4rem;
+  display: table-cell;
+  font-size: 2.7rem;
+  padding-right: 1rem;
+  text-align: center;
+}
+nav a .sub-menu {
+  display: table-cell;
+  font-size: 2rem;
+  /*text-align: center;*/
+}
+
+section {
+  /*padding: 2rem 5rem 2rem 9rem;*/
+  min-height: 100vh;
+}
+section h1 {
+  font-family: Raleway, Roboto, sans-serif;
+  /*font-size: 2.2rem;*/
+}

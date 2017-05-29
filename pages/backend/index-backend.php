@@ -1,53 +1,49 @@
 <?php require_once('header-backend.php') ?>
 
 <!-- main-navbar -->
-<div class="main-navbar">
-    <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="home-page.html">
-                    <img alt="TechnoTech" src="" alt="logo">
+
+<div class="dashboard">
+    <div class="col-md-2" id="navbar-backend">
+        <nav>
+            <div id="logo">
+                <h2>TechnoTech</h2>
+            </div>
+            <div id="menu-backend">
+                <a href="#" title="dashboard">
+                    <span class="fa fa-dashboard"></span>
+                    <span class="sub-menu">Dashboard</span>
+                </a>
+                <a href="#" title="news" class="active">
+                    <span class="fa fa-newspaper-o"></span>
+                    <span class="sub-menu">News</span>
+                </a>
+                <a href="#" title="computer">
+                    <span class="fa fa-desktop"></span>
+                    <span class="sub-menu">Computer</span>
+                </a>
+                <a href="#" title="phone">
+                    <span class="fa fa-mobile"></span>
+                    <span class="sub-menu">Phone</span>
+                </a>
+                <a href="#" title="camera">
+                    <span class="fa fa-camera"></span>
+                    <span class="sub-menu">Camera</span>
+                </a>
+                <a href="#" title="Wiki">
+                    <span class="fa fa-book"></span>
+                    <span class="sub-menu">Wiki</span>
                 </a>
             </div>
+        </nav>
+    </div>
 
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li><a href="home-page.html">Home <span class="sr-only">(current)</span></a></li>
-                    <li><a href="archive-news.html">News <span class="sr-only">(current)</span></a></li>
-                    <li><a href="archive-wiki.html">Tech Wiki <span class="sr-only">(current)</span></a></li>
-                    <li><a href="archive-phone.html">Phone <span class="sr-only">(current)</span></a></li>
-                    <li><a href="archive-computer.html">Computer <span class="sr-only">(current)</span></a></li>
-                    <li><a href="archive-camera.html">Camera <span class="sr-only">(current)</span></a></li>
-                    <li><a href="about-us.html">About us <span class="sr-only">(current)</span></a></li>
-                    <li class="dropdown">
-                        <!-- <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <img class="profile" src="<?php echo $profilePic ?>" alt="profile"> <span class="caret"></span></a> -->
-                        <ul class="dropdown-menu">
-                            <li><a><h4><?php echo $fullName ?></h4></a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a data-toggle="modal" data-target="#updateProfilePic">Change Profile</a></li>
-                            <li><a href="logout.php">Logout</a></li>
-                        </ul>
-                    </li>
-                </ul>
-                <form class="navbar-form navbar-right">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Search">
-                    </div>
-                    <button type="submit" class="btn btn-default"><i class="fa fa-search" aria-hidden="true"></i></button>
-                </form>
-            </div><!-- /.navbar-collapse -->
-        </div><!-- /.container-fluid -->
-    </nav>
+    <div class="col-md-10">
+        <section>
+            <h1>Dashboard</h1>
+            <hr>
+        </section>
+    </div>
 </div>
 
-<button class="btn btn-primary">Test</button>
 
 <?php require_once('footer-backend.php') ?>

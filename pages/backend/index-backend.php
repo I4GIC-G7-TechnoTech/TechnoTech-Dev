@@ -3,7 +3,7 @@
 <!-- main-navbar -->
 
 <div class="dashboard">
-    <div class="col-md-2" id="navbar-backend">
+    <div class="col-md-3" id="navbar-backend">
         <nav>
             <div id="logo">
                 <h2>TechnoTech</h2>
@@ -37,7 +37,7 @@
         </nav>
     </div>
 
-    <div class="col-md-10">
+    <div class="col-md-8">
         <section>
             <h1>Dashboard</h1>
             <hr>

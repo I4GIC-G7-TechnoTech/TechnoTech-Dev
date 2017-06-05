@@ -9,11 +9,11 @@
                 <h2>TechnoTech</h2>
             </div>
             <div id="menu-backend">
-                <a href="#" title="dashboard">
+                <a href="#" title="dashboard" class="active">
                     <span class="fa fa-dashboard"></span>
                     <span class="sub-menu">Dashboard</span>
                 </a>
-                <a href="#" title="news" class="active">
+                <a href="#" title="news">
                     <span class="fa fa-newspaper-o"></span>
                     <span class="sub-menu">News</span>
                 </a>

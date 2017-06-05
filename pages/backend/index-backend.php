@@ -3,7 +3,7 @@
 <!-- main-navbar -->
 
 <div class="dashboard">
-    <div class="col-xs-3 col-sm-2 col-md-2" id="navbar-backend">
+    <div class="col-xs-3 col-sm-3 col-md-3" id="navbar-backend">
         <nav>
             <div id="logo">
                 <h2>TechnoTech</h2>

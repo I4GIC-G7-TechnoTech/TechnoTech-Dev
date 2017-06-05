@@ -1,4 +1,5 @@
 <?php require_once('header-backend.php') ?>
+<?php require_once('./../../config/db.php') ?>
 
 <!-- main-navbar -->
 
@@ -9,11 +10,11 @@
                 <h2>TechnoTech</h2>
             </div>
             <div id="menu-backend">
-                <a href="index-backend.php" title="dashboard" class="active">
+                <a href="index-backend.php" title="dashboard">
                     <span class="fa fa-dashboard"></span>
                     <span class="sub-menu">Dashboard</span>
                 </a>
-                <a href="news-backend.php" title="news">
+                <a href="#" title="news" class="active">
                     <span class="fa fa-newspaper-o"></span>
                     <span class="sub-menu">News</span>
                 </a>
@@ -39,8 +40,18 @@
 
     <div class="col-xs-8 col-sm-9 col-md-9">
         <section>
-            <h1>Dashboard</h1>
-            <hr>
+            <div class="head-section">
+                <h1>News</h1>
+                <button class="btn btn-primary" role="button">Add News</button>
+                <hr>
+
+            </div>
+            <div class="list">
+                <div class="row">
+                    <div class="news-list">
+                    </div>
+                </div>
+            </div>
         </section>
     </div>
 </div>

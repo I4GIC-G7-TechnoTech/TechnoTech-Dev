@@ -1,0 +1,208 @@
+a {
+	text-decoration: none;
+}
+
+a.social-media {
+    padding: 20px;
+    font-size: 20px;
+    width: 20px;
+    text-align: center;
+    text-decoration: none;
+    color: #000000;
+}
+
+.archive-image {
+	float: left;
+	width: 40%;
+	height: 40%;
+	margin-right: 10px;
+	/*max-height: 125px;*/
+}
+
+.archive-title{
+	margin-top: 40px;
+}
+
+body {
+	background-color: #7F8D8C;
+}
+
+.float-right {
+	float: right;
+}
+
+footer {
+	background-color: rgb(230, 227, 148);
+	padding: 10px;
+}
+
+.footer-copy {
+	background-color:;
+}
+
+.footer-nav {
+		
+}
+
+.footer-navbar {
+	list-style-type: none;
+	padding: 0;
+}
+
+.footer-navbar li a{
+	color: rgb(53, 53, 53);
+}
+
+hr {
+    border: 3px solid #1111111 !important;
+    margin-bottom:10px !important; 
+    margin-top:5px !important;
+}
+
+hr.main-title {
+	border-width: medium;
+}
+
+#img-brand {
+	width:70px;
+	padding: 5px;
+	margin:  0;
+}
+
+.img-center {
+	margin: auto;
+	width: 60%;
+}
+
+.img-feature {
+	max-height: 180px;
+	width: 100%;
+}
+
+.img-logo {
+	float: left;
+}
+
+.img-profile {
+	padding: 10px;
+}
+
+.img-post {
+	float: left;
+	height: auto;
+	width: 50%;
+}
+
+.img-slider {
+	max-height: 450px !important;
+	width: 100%;
+}
+
+h3#img-slider-2 {
+	color: black;
+	text-align: right;
+}
+
+h3#img-slider-3 {
+   	color: grey;
+   	font-weight: thick;
+	text-align: right;
+	-webkit-text-stroke: 0.3px white;
+}
+
+.line {
+	margin-bottom: 10px;
+}
+
+/*.list-navbar li:hover {
+	background-color: white;
+}*/
+
+.nav li:hover {
+	background-color: white;
+}
+
+.navbar {
+	background-color: rgb(230, 227, 148);
+}
+
+p {
+	text-align: justify;
+}
+
+.page-title {
+	margin-top: 80px;
+}
+
+.row-2 {
+	background-color: rgba(159, 156, 156, 0.16);
+}
+
+.rows {
+	margin-bottom: 20px
+}
+
+span.step {
+  	background: #cccccc;
+  	border-radius: 0.8em;
+ 	-moz-border-radius: 0.8em;
+ 	-webkit-border-radius: 0.8em;
+  	color: #ffffff;
+  	display: inline-block;
+  	font-weight: bold;
+  	line-height: 1.6em;
+  	margin-right: 5px;
+  	text-align: center;
+  	width: 1.6em; 
+}
+
+.sr-only:hover {
+	background-color: white !important;
+}
+
+.sub-post {
+	padding: 0;
+}
+
+#top {
+	margin-top: 87px;
+}
+
+.top-container {
+	background-color: white; 
+	margin: auto;
+	padding: 20px;
+	width: 100%;
+}
+
+ul#contact {
+	font-size: 16px;
+	list-style-type: none;
+	line-height: 1.5em;
+	font-weight: bold;
+}
+
+.video-post {
+	margin: auto;
+	width: 70%;
+}
+
+.video-wiki {
+	width: 80%;
+	margin: auto;
+}
+
+@media screen (min-width:480px) and (max-width: 768px) {
+	.archive-title .page-title{
+		margin-top: 200px;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.archive-title {
+		margin-top: 40px;
+	}
+	.page-title {
+		margin-top: 40px;
+	}
+}

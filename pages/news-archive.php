@@ -3,7 +3,7 @@
 ?>
 
     	<div class="archive-title">
-    		<h1>TECH NEWS</h1>
+    		<h1>TECHNOTECH NEWS</h1>
     		<hr>
     	</div>
 

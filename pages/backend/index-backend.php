@@ -40,7 +40,16 @@
     <div class="col-xs-8 col-sm-9 col-md-9">
         <section>
             <h1>Dashboard</h1>
-            <hr>
+            <form>
+                <div class="form-group">
+                    <label>Title</label>
+                    <input class="form-control" type="text" name="title" placeholder="Title Here">
+                </div>
+                <div class="form-group">
+                    <label>Content</label>
+                    <textarea class="tinymce"></textarea>
+                </div>
+            </form>
         </section>
     </div>
 </div>

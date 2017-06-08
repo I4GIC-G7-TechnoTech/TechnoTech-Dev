@@ -3,7 +3,7 @@
 <!-- main-navbar -->
 
 <div class="dashboard">
-    <div class="col-xs-3 col-sm-3 col-md-3" id="navbar-backend">
+    <div class="col-xs-3 col-sm-3 col-md-2" id="navbar-backend">
         <nav>
             <div id="logo">
                 <h2>TechnoTech</h2>
@@ -37,16 +37,16 @@
         </nav>
     </div>
 
-    <div class="col-xs-8 col-sm-9 col-md-9">
+    <div class="col-xs-8 col-sm-9 col-md-10">
         <section>
-            <h1>Dashboard</h1>
+            <h1> Dashboard </h1>
             <form>
                 <div class="form-group">
-                    <label>Title</label>
+                    <label><h3>Title</h3></label>
                     <input class="form-control" type="text" name="title" placeholder="Title Here">
                 </div>
                 <div class="form-group">
-                    <label>Content</label>
+                    <label><h3> Content</label>
                     <textarea class="tinymce"></textarea>
                 </div>
             </form>

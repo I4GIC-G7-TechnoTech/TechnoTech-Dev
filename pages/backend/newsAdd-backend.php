@@ -14,23 +14,23 @@
                     <span class="fa fa-dashboard"></span>
                     <span class="sub-menu">Dashboard</span>
                 </a>
-                <a href="#" title="news" class="active">
+                <a href="news-backend.php" title="news" class="active">
                     <span class="fa fa-newspaper-o"></span>
                     <span class="sub-menu">News</span>
                 </a>
-                <a href="#" title="computer">
+                <a href="computer-backend.php" title="computer">
                     <span class="fa fa-desktop"></span>
                     <span class="sub-menu">Computer</span>
                 </a>
-                <a href="#" title="phone">
+                <a href="phone-backend.php" title="phone">
                     <span class="fa fa-mobile"></span>
                     <span class="sub-menu">Phone</span>
                 </a>
-                <a href="#" title="camera">
+                <a href="camera-backend.php" title="camera">
                     <span class="fa fa-camera"></span>
                     <span class="sub-menu">Camera</span>
                 </a>
-                <a href="#" title="Wiki">
+                <a href="wiki-backend.php" title="Wiki">
                     <span class="fa fa-book"></span>
                     <span class="sub-menu">Wiki</span>
                 </a>
@@ -38,18 +38,30 @@
         </nav>
     </div>
 
-    <div class="col-xs-8 col-sm-9 col-md-9">
+    <div class="col-xs-8 col-sm-9 col-md-10">
         <section>
             <div class="head-section">
-                <h1>News</h1>
-                <a href="newsAdd-backend.php">
-                    <button class="btn btn-primary" role="button">Add News</button>
-                </a>
-                <hr>
+                <h1> Add News </h1>
             </div>
-            <div class="listNews">
-                <!-- Code for List News from Database -->
+            <div class="form-group">
+                <form method="POST" action="newsCreate-backend.php">
+                    <div class="form-group">
+                        <label><h3>Title</h3></label>
+                        <input class="form-control" type="text" name="title" placeholder="Title Here">
+                    </div>
+
+                    <div class="form-group">
+                        <label><h3>Content</h3></label>
+                        <textarea class="tinymce" name="content"></textarea>
+                    </div>
+
+                    <button class="btn btn-primary" type="submit" name="publish">Publish</button>
+                    <a href="news-backend.php">
+                        <button class="btn btn-warning" type="button" role="button">Cancel</button>
+                    </a>
+                </form>
             </div>
+
         </section>
     </div>
 </div>

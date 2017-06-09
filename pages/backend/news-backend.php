@@ -1,5 +1,9 @@
-<?php require_once('header-backend.php') ?>
-<?php require_once('./../../config/db.php') ?>
+<?php 
+    require_once('header-backend.php');
+    require_once('./../../config/dbconfig.php');
+?>
+
+
 
 <!-- main-navbar -->
 
@@ -42,15 +46,23 @@
         <section>
             <div class="head-section">
                 <h1>News</h1>
-                <button class="btn btn-primary" role="button">Add News</button>
+                <a href="newsAdd-backend.php">
+                    <button class="btn btn-primary" role="button">Add News</button>
+                </a>
                 <hr>
-
             </div>
-            <div class="list">
-                <div class="row">
-                    <div class="news-list">
-                    </div>
-                </div>
+            <div class="listNews">
+                <table class="table table-striped">
+                    <thead>
+                        <td>Title</td>
+                        <td>Auther</td>
+                        <td>Created Date</td>
+                    </thead>
+                    <tbody>
+                        <?php require_once('newsList-backend.php') ?>
+                    </tbody>
+                    
+                </table>
             </div>
         </section>
     </div>

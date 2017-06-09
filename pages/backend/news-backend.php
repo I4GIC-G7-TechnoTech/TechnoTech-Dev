@@ -8,7 +8,7 @@
 <!-- main-navbar -->
 
 <div class="dashboard">
-    <div class="col-xs-3 col-sm-2 col-md-2" id="navbar-backend">
+    <div class="col-xs-3 col-sm-4 col-md-2" id="navbar-backend">
         <nav>
             <div id="logo">
                 <h2>TechnoTech</h2>
@@ -42,7 +42,7 @@
         </nav>
     </div>
 
-    <div class="col-xs-8 col-sm-9 col-md-9">
+    <div class="col-xs-8 col-sm-8 col-md-10">
         <section>
             <div class="head-section">
                 <h1>News</h1>
@@ -57,6 +57,7 @@
                         <td>Title</td>
                         <td>Auther</td>
                         <td>Created Date</td>
+                        <td>Action</td>
                     </thead>
                     <tbody>
                         <?php require_once('newsList-backend.php') ?>

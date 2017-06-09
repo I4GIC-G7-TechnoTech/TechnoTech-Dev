@@ -52,7 +52,17 @@
                 <hr>
             </div>
             <div class="listNews">
-                <?php require_once('newsList-backend.php') ?>
+                <table class="table table-striped">
+                    <thead>
+                        <td>Title</td>
+                        <td>Auther</td>
+                        <td>Created Date</td>
+                    </thead>
+                    <tbody>
+                        <?php require_once('newsList-backend.php') ?>
+                    </tbody>
+                    
+                </table>
             </div>
         </section>
     </div>

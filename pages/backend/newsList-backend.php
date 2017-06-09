@@ -10,9 +10,11 @@
 			$id = $row->id; 
 ?>
 			<div class="news" id="<?php echo 'news'.$id ?>">
-				<h4> <?php echo $row->title ?> </h4>
-				<p> <?php echo $row->created ?> </p>
-				<p> <?php echo $row->updated ?> </p>
+				<tr>
+					<td> <?php echo $row->title ?> </td>
+					<td> Will Specified Soon </td>
+					<td> <?php echo $row->updated ?> </td>
+				</tr>
 			</div>
 
 <?php	

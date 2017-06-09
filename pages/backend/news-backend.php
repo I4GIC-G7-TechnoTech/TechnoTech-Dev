@@ -1,4 +1,8 @@
-<?php require_once('header-backend.php') ?>
+<?php 
+    require_once('header-backend.php');
+    require_once('./../../config/dbconfig.php');
+?>
+
 
 
 <!-- main-navbar -->
@@ -48,7 +52,7 @@
                 <hr>
             </div>
             <div class="listNews">
-                <!-- Code for List News from Database -->
+                <?php require_once('newsList-backend.php') ?>
             </div>
         </section>
     </div>

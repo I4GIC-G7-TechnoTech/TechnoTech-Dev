@@ -5,17 +5,14 @@
 		$id = $_POST['id'];
 		echo "$id";
 
-		$sql = "DELETE FROM note WHERE id = $id";
+		$sql = "DELETE FROM news WHERE id = $id";
 		$result = $conn->query($sql);
 
 		if ($result) {
-			echo "success";
+			header("location: news-backend.php?status='success'");
 		}
 		else {
-			echo "Error: Post is not deleted.";
+			header("location: news-backend.php?status='fail'");
 		}
 	}
-	
-
-
 ?>

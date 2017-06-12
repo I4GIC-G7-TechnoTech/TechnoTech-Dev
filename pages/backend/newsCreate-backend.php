@@ -10,18 +10,10 @@
 	$result = $conn->query($sql);
 
 	if ($result) {
-		header('location: newsAdd-backend.php');
-
-		/* Alert Message */
-		echo "
-				<div class='alert alert-success'>
-	  				<strong>Success!</strong> Indicates a successful or positive action.
-				</div>
-			 ";
-		
+		header('location: newsAdd-backend.php?status="success"');
 	}
 	else {
-		echo "Error: Post is not created";
+		header('location: newsAdd-backend.php?status="fail"');
 	}
 	
 ?>

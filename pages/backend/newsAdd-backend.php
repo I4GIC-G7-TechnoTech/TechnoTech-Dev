@@ -1,9 +1,12 @@
-<?php require_once('header-backend.php') ?>
-
+<?php 
+    require_once('header-backend.php');
+    require_once('./../../functions.php');
+?>
 
 <!-- main-navbar -->
 
 <div class="dashboard">
+
     <div class="col-xs-3 col-sm-2 col-md-2" id="navbar-backend">
         <nav>
             <div id="logo">
@@ -40,6 +43,9 @@
 
     <div class="col-xs-8 col-sm-9 col-md-10">
         <section>
+            <?php
+                showAlertMessage();
+            ?>
             <div class="head-section">
                 <h1> Add News </h1>
             </div>

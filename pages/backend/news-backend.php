@@ -1,9 +1,9 @@
 <?php 
     require_once('header-backend.php');
     require_once('./../../config/dbconfig.php');
+    require_once('./../../functions.php');
+   
 ?>
-
-
 
 <!-- main-navbar -->
 
@@ -44,6 +44,9 @@
 
     <div class="col-xs-8 col-sm-8 col-md-10">
         <section>
+            <?php
+                showAlertMessage();
+            ?>
             <div class="head-section">
                 <h1>News</h1>
                 <a href="newsAdd-backend.php">
@@ -54,10 +57,10 @@
             <div class="listNews">
                 <table class="table table-striped">
                     <thead>
-                        <td>Title</td>
-                        <td>Auther</td>
-                        <td>Created Date</td>
-                        <td>Action</td>
+                        <td><strong>Title</strong></td>
+                        <td><strong>Author</strong></td>
+                        <td><strong>Created Date</strong></td>
+                        <td><strong>Action</strong></td>
                     </thead>
                     <tbody>
                         <?php require_once('newsList-backend.php') ?>

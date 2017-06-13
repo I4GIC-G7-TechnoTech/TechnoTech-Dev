@@ -2,7 +2,7 @@
     require_once('header-backend.php');
     require_once('./../../functions.php');
 
-    $postType = 'news';
+    $postType = 'computer';
 ?>
 
 <!-- main-navbar -->
@@ -49,7 +49,7 @@
                 showAlertMessage();
             ?>
             <div class="head-section">
-                <h1> Add News </h1>
+                <h1> Add <?php echo $postType ?> </h1>
             </div>
             <div class="form-group">
                 <form method="POST" action="create-backend.php">
@@ -64,7 +64,7 @@
                     </div>
 
                     <button class="btn btn-primary" type="submit" name="publish">Publish</button>
-                    <a href="news-backend.php">
+                    <a href="<?php echo $postType.'-backend.php' ?>">
                         <button class="btn btn-warning" type="button" role="button">Cancel</button>
                     </a>
                     <input class='form-control' type='hidden' value=<?php echo $postType ?> name='postType'>

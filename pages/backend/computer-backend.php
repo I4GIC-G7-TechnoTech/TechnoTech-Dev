@@ -1,4 +1,11 @@
-<?php require_once('header-backend.php') ?>
+<?php 
+    require_once('header-backend.php');
+    require_once('./../../config/dbconfig.php');
+    require_once('./../../functions.php');
+   
+    $postType = "computer";
+    $page = "Computer";
+?>
 
 <!-- main-navbar -->
 
@@ -13,11 +20,11 @@
                     <span class="fa fa-dashboard"></span>
                     <span class="sub-menu">Dashboard</span>
                 </a>
-                <a href="news-backend.php" title="news" class="active">
+                <a href="news-backend.php" title="news">
                     <span class="fa fa-newspaper-o"></span>
                     <span class="sub-menu">News</span>
                 </a>
-                <a href="computer-backend.php" title="computer">
+                <a href="#" title="computer" class="active">
                     <span class="fa fa-desktop"></span>
                     <span class="sub-menu">Computer</span>
                 </a>
@@ -37,19 +44,33 @@
         </nav>
     </div>
 
-    <div class="col-xs-8 col-sm-9 col-md-10">
+    <div class="col-xs-8 col-sm-8 col-md-10">
         <section>
-            <h1> Dashboard </h1>
-            <form>
-                <div class="form-group">
-                    <label><h3>Title</h3></label>
-                    <input class="form-control" type="text" name="title" placeholder="Title Here">
-                </div>
-                <div class="form-group">
-                    <label><h3> Content</label>
-                    <textarea class="tinymce"></textarea>
-                </div>
-            </form>
+            <?php
+                showAlertMessage();
+            ?>
+            <div class="head-section">
+                <h1><?php echo $page ?></h1>
+                <a href="add-backend.php">
+                    <button class="btn btn-primary" role="button">Add <?php echo $page ?></button>
+                </a>
+                <hr>
+            </div>
+            <div class= "<?php echo 'list'.$postType ?>">
+                <table class="table table-striped">
+                    <thead>
+                        <td><strong>Title</strong></td>
+                        <td><strong>Author</strong></td>
+                        <td><strong>Created On</strong></td>
+                        <td><strong>Updated On</strong></td>
+                        <td><strong>Action</strong></td>
+                    </thead>
+                    <tbody>
+                        <?php require_once('list-backend.php') ?>
+                    </tbody>
+                    
+                </table>
+            </div>
         </section>
     </div>
 </div>

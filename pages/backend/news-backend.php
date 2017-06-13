@@ -20,23 +20,23 @@
                     <span class="fa fa-dashboard"></span>
                     <span class="sub-menu">Dashboard</span>
                 </a>
-                <a href="#" title="news" class="active">
+                <a href="news-backend.php" title="news" class="active">
                     <span class="fa fa-newspaper-o"></span>
                     <span class="sub-menu">News</span>
                 </a>
-                <a href="#" title="computer">
+                <a href="computer-backend.php" title="computer">
                     <span class="fa fa-desktop"></span>
                     <span class="sub-menu">Computer</span>
                 </a>
-                <a href="#" title="phone">
+                <a href="phone-backend.php" title="phone">
                     <span class="fa fa-mobile"></span>
                     <span class="sub-menu">Phone</span>
                 </a>
-                <a href="#" title="camera">
+                <a href="camera-backend.php" title="camera">
                     <span class="fa fa-camera"></span>
                     <span class="sub-menu">Camera</span>
                 </a>
-                <a href="#" title="Wiki">
+                <a href="wiki-backend.php" title="Wiki">
                     <span class="fa fa-book"></span>
                     <span class="sub-menu">Wiki</span>
                 </a>

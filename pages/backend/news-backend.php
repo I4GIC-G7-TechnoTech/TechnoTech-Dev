@@ -59,7 +59,8 @@
                     <thead>
                         <td><strong>Title</strong></td>
                         <td><strong>Author</strong></td>
-                        <td><strong>Created Date</strong></td>
+                        <td><strong>Created On</strong></td>
+                        <td><strong>Updated On</strong></td>
                         <td><strong>Action</strong></td>
                     </thead>
                     <tbody>

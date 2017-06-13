@@ -1,7 +1,6 @@
 <?php 
 	require_once('./../../config/dbconfig.php');
 	require_once('./../../functions.php');
-
 ?>
 
 <?php
@@ -20,10 +19,11 @@
 				<tr>
 					<td> <?php echo $row->title ?> </td>
 					<td> Will Specified Soon </td>
+					<td> <?php echo $row->created ?> </td>
 					<td> <?php echo $row->updated ?> </td>
 					<td>
                         <?php 
-                        	showUpdateButton($id, 'newsUpdate-backend.php', $title, $content	);
+                        	showUpdateButton($id, 'newsUpdate-backend.php', $title, $content);
                         	showDeleteButton($id, 'newsDelete-backend.php'); 
                         ?>
 					</td>

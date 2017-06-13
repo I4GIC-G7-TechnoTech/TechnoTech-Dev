@@ -60,7 +60,7 @@
 	function showUpdateButton($id, $action, $title, $content) { ?>
 		<!-- Update Button -->
 		<button type='button' class='btn btn-warning btn-xs' id='btn-update' data-toggle='modal' data-target=<?php echo '#update-'.$id ?>>
-            <i class='fa fa-trash' aria-hidden='true'></i>
+            <i class='fa fa-pencil-square-o' aria-hidden='true'></i>
         </button>
 
         <!-- Update Modal -->

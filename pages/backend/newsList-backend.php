@@ -14,17 +14,18 @@
 	if ($result) {
 		while ($row = $result->fetch_object()) {
 			$id = $row->id; 
+			$title = $row->title;
+			$content = $row->content;
 ?>
 				<tr>
 					<td> <?php echo $row->title ?> </td>
 					<td> Will Specified Soon </td>
 					<td> <?php echo $row->updated ?> </td>
 					<td>
-						<button type='button' class='btn btn-warning btn-xs' id='btn-update' data-toggle='modal' data-target= <?php echo '#update-'.$id ?>>
-                            <i class='fa fa-pencil-square-o' aria-hidden='true'></i>
-                        </button>
-
-                        <?php showDeleteButton($id, 'newsDelete-backend.php'); ?>
+                        <?php 
+                        	showUpdateButton($id, 'newsUpdate-backend.php', $title, $content	);
+                        	showDeleteButton($id, 'newsDelete-backend.php'); 
+                        ?>
 					</td>
 				</tr>
 

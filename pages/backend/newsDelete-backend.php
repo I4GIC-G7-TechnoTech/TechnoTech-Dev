@@ -3,7 +3,6 @@
 
 	if (isset($_POST['deletePost'])) {
 		$id = $_POST['id'];
-		echo "$id";
 
 		$sql = "DELETE FROM news WHERE id = $id";
 		$result = $conn->query($sql);

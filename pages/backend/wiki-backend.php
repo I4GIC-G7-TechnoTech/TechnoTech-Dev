@@ -1,6 +1,6 @@
 <?php 
-	$postType = "computer";
-    $page = "Computer";
+	$postType = "wiki";
+    $page = "Wiki";
 
     require_once('header-backend.php');
     require_once('./../../config/dbconfig.php');

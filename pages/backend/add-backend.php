@@ -1,7 +1,4 @@
-<?php 
-    require_once('header-backend.php');
-    require_once('./../../functions.php');
-
+<?php
     if (isset($_POST['page'])) {
         $page = $_POST['page'];
         $postType = $_POST['postType'];
@@ -10,6 +7,9 @@
         $page = $_GET['page'];
         $postType = $_GET['postType']; 
     }
+ 
+    require_once('header-backend.php');
+    require_once('./../../functions.php');
 ?>
 
 <!-- main-navbar -->

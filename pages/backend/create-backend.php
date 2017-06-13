@@ -4,16 +4,17 @@
 	if(isset($_POST['publish'])) {
 		$title = $_POST['title'];
 		$content = $_POST['content'];
+		$postType = $_POST['postType'];
 	}
 
-	$sql = "INSERT INTO news (title, content) VALUES ('$title', '$content')";
+	$sql = "INSERT INTO $postType (title, content) VALUES ('$title', '$content')";
 	$result = $conn->query($sql);
 
 	if ($result) {
-		header('location: newsAdd-backend.php?status="success"');
+		header('location: add-backend.php?status="success"');
 	}
 	else {
-		header('location: newsAdd-backend.php?status="fail"');
+		header('location: add-backend.php?status="fail"');
 	}
 	
 ?>

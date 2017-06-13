@@ -3,6 +3,8 @@
     require_once('./../../config/dbconfig.php');
     require_once('./../../functions.php');
    
+    $postType = "news";
+    $page = "News"
 ?>
 
 <!-- main-navbar -->
@@ -48,13 +50,13 @@
                 showAlertMessage();
             ?>
             <div class="head-section">
-                <h1>News</h1>
-                <a href="newsAdd-backend.php">
-                    <button class="btn btn-primary" role="button">Add News</button>
+                <h1><?php echo $page ?></h1>
+                <a href="add-backend.php">
+                    <button class="btn btn-primary" role="button">Add <?php echo $page ?></button>
                 </a>
                 <hr>
             </div>
-            <div class="listNews">
+            <div class= "<?php echo 'list'.$postType ?>">
                 <table class="table table-striped">
                     <thead>
                         <td><strong>Title</strong></td>
@@ -64,7 +66,7 @@
                         <td><strong>Action</strong></td>
                     </thead>
                     <tbody>
-                        <?php require_once('newsList-backend.php') ?>
+                        <?php require_once('list-backend.php') ?>
                     </tbody>
                     
                 </table>

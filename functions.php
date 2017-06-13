@@ -26,7 +26,7 @@
 ?>
 
 <?php 
-	function showDeleteButton($id, $action) { ?>
+	function showDeleteButton($id, $action, $postType) { ?>
 		<!-- Delete Button -->
 		<button type='button' class='btn btn-danger btn-xs' id='btn-delete' data-toggle='modal' data-target=<?php echo '#delete-'.$id ?>>
             <i class='fa fa-trash' aria-hidden='true'></i>
@@ -44,6 +44,7 @@
                         <div class='modal-footer'>
                             <div class='form-group'>
                                 <input class='form-control' type='hidden' value=<?php echo $id ?> name='id'>
+                                <input class='form-control' type='hidden' value=<?php echo $postType ?> name='postType'>
                                 <button class='btn btn-success' type='submit' name='deletePost'>Confirm</button>
                                 <button class='btn btn-danger' type='button' data-dismiss='modal' aria-hidden='true'>Cancel</button>
                             </div>
@@ -57,7 +58,7 @@
 ?>
 
 <?php 
-	function showUpdateButton($id, $action, $title, $content) { ?>
+	function showUpdateButton($id, $action, $title, $content, $postType) { ?>
 		<!-- Update Button -->
 		<button type='button' class='btn btn-warning btn-xs' id='btn-update' data-toggle='modal' data-target=<?php echo '#update-'.$id ?>>
             <i class='fa fa-pencil-square-o' aria-hidden='true'></i>
@@ -82,10 +83,11 @@
 		                        <label><h3>Content</h3></label>
 		                        <textarea class="tinymce" name="content"><?php echo $content ?></textarea>
 		                    </div>
-                    	</div>1
+                    	</div> 
                         <div class='modal-footer'>
                             <div class='form-group'>
                                 <input class='form-control' type='hidden' value=<?php echo $id ?> name='id'>
+                                <input class='form-control' type='hidden' value=<?php echo $postType ?> name='postType'>
                                 <button class='btn btn-success' type='submit' name='updatePost'>Update</button>
                                 <button class='btn btn-danger' type='button' data-dismiss='modal' aria-hidden='true'>Cancel</button>
                             </div>

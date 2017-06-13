@@ -4,9 +4,6 @@
 ?>
 
 <?php
-	$postType = "news";
-	$listType = "newsList";
-
 	$sql = "SELECT * FROM $postType";
 	$result = $conn->query($sql);
 
@@ -23,8 +20,8 @@
 					<td> <?php echo $row->updated ?> </td>
 					<td>
                         <?php 
-                        	showUpdateButton($id, 'newsUpdate-backend.php', $title, $content);
-                        	showDeleteButton($id, 'newsDelete-backend.php'); 
+                        	showUpdateButton($id, 'update-backend.php', $title, $content, $postType);
+                        	showDeleteButton($id, 'delete-backend.php', $postType); 
                         ?>
 					</td>
 				</tr>
@@ -33,7 +30,7 @@
 		}
 	}
 	else {
-		echo "No News Found!";
+		echo "No Entry Found!";
 	}
 
 ?>

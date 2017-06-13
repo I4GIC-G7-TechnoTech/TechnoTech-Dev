@@ -1,6 +1,8 @@
 <?php 
     require_once('header-backend.php');
     require_once('./../../functions.php');
+
+    $postType = 'news';
 ?>
 
 <!-- main-navbar -->
@@ -50,7 +52,7 @@
                 <h1> Add News </h1>
             </div>
             <div class="form-group">
-                <form method="POST" action="newsCreate-backend.php">
+                <form method="POST" action="create-backend.php">
                     <div class="form-group">
                         <label><h3>Title</h3></label>
                         <input class="form-control" type="text" name="title" placeholder="Title Here">
@@ -65,12 +67,12 @@
                     <a href="news-backend.php">
                         <button class="btn btn-warning" type="button" role="button">Cancel</button>
                     </a>
+                    <input class='form-control' type='hidden' value=<?php echo $postType ?> name='postType'>
                 </form>
             </div>
 
         </section>
     </div>
 </div>
-
 
 <?php require_once('footer-backend.php') ?>

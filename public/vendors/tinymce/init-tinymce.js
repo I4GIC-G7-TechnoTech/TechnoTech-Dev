@@ -8,7 +8,7 @@ tinymce.init ({
 
 	/* size of Editor */
 	width: "100%",
-	height: 300,
+	height: 250,
 
 	/* display statusbar */
 	statusbar: true,

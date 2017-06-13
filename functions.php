@@ -1,5 +1,30 @@
 <?php require_once('config/dbconfig.php') ?>
 
+<!-- Display Functions -->
+<?php   
+	function showAlertMessage() {
+		if (isset($_GET['status'])) {
+	        $status = $_GET['status']; 
+	        if ($status = 'success') {
+	            echo '
+	                <div class="alert alert-success fade in">
+	                    <a href="#" class="close" data-dismiss="alert">&times;</a>
+	                    <strong>Request Success!</strong>
+	                </div>
+	            ';
+	        }
+	        else if ($status = 'fail') {
+	            echo '
+	                <div class="alert alert-danger fade in">
+	                    <a href="#" class="close" data-dismiss="alert">&times;</a>
+	                    <strong>Request Failed!</strong>
+	                </div>
+	            ';
+	        }
+	    }
+	}
+?>
+
 <?php 
 	function showDeleteButton($id, $action) { ?>
 		<!-- Delete Button -->
@@ -73,26 +98,3 @@
 	}
 ?>
 
-<?php   
-	function showAlertMessage() {
-		if (isset($_GET['status'])) {
-	        $status = $_GET['status']; 
-	        if ($status = 'success') {
-	            echo '
-	                <div class="alert alert-success fade in">
-	                    <a href="#" class="close" data-dismiss="alert">&times;</a>
-	                    <strong>Request Success!</strong>
-	                </div>
-	            ';
-	        }
-	        else if ($status = 'fail') {
-	            echo '
-	                <div class="alert alert-danger fade in">
-	                    <a href="#" class="close" data-dismiss="alert">&times;</a>
-	                    <strong>Request Failed!</strong>
-	                </div>
-	            ';
-	        }
-	    }
-	}
-?>

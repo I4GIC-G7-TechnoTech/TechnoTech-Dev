@@ -1,6 +1,6 @@
 <?php 
-	$postType = "computer";
-    $page = "Computer";
+	$postType = "camera";
+    $page = "Camera";
 
     require_once('header-backend.php');
     require_once('./../../config/dbconfig.php');

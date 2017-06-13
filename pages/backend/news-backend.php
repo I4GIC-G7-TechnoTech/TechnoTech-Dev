@@ -1,10 +1,10 @@
-<?php 
+<?php
+	$postType = "news";
+    $page = "News";
+
     require_once('header-backend.php');
     require_once('./../../config/dbconfig.php');
     require_once('./../../functions.php');
-   
-    $postType = "news";
-    $page = "News";
 
     /* display page content */ 
     require_once('template-backend.php');

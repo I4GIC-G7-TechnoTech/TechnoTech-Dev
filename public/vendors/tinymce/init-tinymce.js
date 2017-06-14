@@ -20,6 +20,10 @@ tinymce.init ({
 		"save table contextmenu directionality emoticons template paste textcolor"
 	],
 
+	menubar: "edit",
+
+	paste_as_text: true,
+
 	/* toolbar */
-	toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | print preview media fullpage | forecolor backcolor emoticons"
+	toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | print preview media fullpage | forecolor backcolor emoticons | paste"
 });

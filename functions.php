@@ -4,8 +4,8 @@
 <?php   
 	function showAlertMessage() {
 		if (isset($_GET['status'])) {
-	        $status = $_GET['status']; 
-	        if ($status = 'success') {
+	        $status = $_GET['status'];
+	        if ($status == "success") {
 	            echo '
 	                <div class="alert alert-success fade in">
 	                    <a href="#" class="close" data-dismiss="alert">&times;</a>
@@ -13,7 +13,7 @@
 	                </div>
 	            ';
 	        }
-	        else if ($status = 'fail') {
+	        else if ($status == "fail") {
 	            echo '
 	                <div class="alert alert-danger fade in">
 	                    <a href="#" class="close" data-dismiss="alert">&times;</a>
@@ -100,3 +100,41 @@
 	}
 ?>
 
+<?php 
+function prepareUploadedImage($imageType) {
+    if (isset($imageType)) {
+        if ($imageType == $_FILES['featureImage']) {
+            $type = "f";
+        }
+        else if ($imageType == $_FILES['postImage']) {
+            $type = "p";
+        }
+
+        $imgGallary = './../../database/imgGallery/';
+        $fileTmpName = $imageType['tmp_name'];
+        $fileExtension = pathinfo($imageType['name'])['extension'];
+        $fileName = $type.time().".$fileExtension";
+        $target = $imgGallary.$fileName;
+        $fileSize = $imageType['size'];
+
+        // Check uploaded file size
+        if ($fileSize <= 5242880) {
+            if (in_array($fileExtension, ['jpg', 'png'])) {
+                if (move_uploaded_file($fileTmpName, $target)) {
+                    return $target;
+                }
+                else {
+                    header('location:add-backend.php?status=fail&postType='.$postType.'&page='.$page);
+                }
+            }
+            else {
+                header('location: add-backend.php?status=fail&postType='.$postType.'&page='.$page);
+            }
+        }
+        else {
+            header('location: add-backend.php?status=fail&postType='.$postType.'&page='.$page);
+        }
+    }
+
+} 
+?>

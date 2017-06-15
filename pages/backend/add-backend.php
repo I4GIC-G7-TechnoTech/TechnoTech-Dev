@@ -27,7 +27,7 @@
                 <h1> Add <?php echo $page ?> </h1>
             </div>
             <div class="form-group">
-                <form method="POST" action="create-backend.php">
+                <form enctype="multipart/form-data" method="POST" role='form' name="form-addPost" action="create-backend.php">
                     <div class="form-group">
                         <label><h3>Title</h3></label>
                         <input class="form-control" type="text" name="title" placeholder="Title Here">
@@ -36,6 +36,21 @@
                     <div class="form-group">
                         <label><h3>Content</h3></label>
                         <textarea class="tinymce" name="content"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label><h3>Feature Image</h3></label>
+                        <input class="form-control" type="file" name="featureImage">
+                    </div>
+
+                    <div class="form-group">
+                        <label><h3>Post Image</h3></label>
+                        <input class="form-control" type="file" name="postImage">
+                    </div>
+
+                    <div class="youtubeLink">
+                        <label><h3>Embeded Video</h3></label>
+                        <input class="form-control" type="text" name="youtubeLink">
                     </div>
 
                     <input class='form-control' type='hidden' value=<?php echo $postType ?> name='postType'>

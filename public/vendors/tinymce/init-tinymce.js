@@ -20,7 +20,7 @@ tinymce.init ({
 		"save table contextmenu directionality emoticons template paste textcolor"
 	],
 
-	menubar: "edit",
+	// menubar: "edit",
 
 	paste_as_text: true,
 

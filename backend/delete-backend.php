@@ -1,5 +1,5 @@
 <?php 
-	require_once('./../../config/dbconfig.php');
+	require_once('./../config/dbconfig.php');
 
 	if (isset($_POST['deletePost'])) {
 		$id = $_POST['id'];

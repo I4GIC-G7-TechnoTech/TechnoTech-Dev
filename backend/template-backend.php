@@ -1,7 +1,7 @@
 <?php 
     require_once('header-backend.php');
-    require_once('./../../config/dbconfig.php');
-    require_once('./../../functions.php');
+    require_once('./../config/dbconfig.php');
+    require_once('./../functions.php');
 ?>
 
 <div class="dashboard">

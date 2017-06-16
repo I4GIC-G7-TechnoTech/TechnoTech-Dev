@@ -9,7 +9,7 @@
     }
  
     require_once('header-backend.php');
-    require_once('./../../functions.php');
+    require_once('./../functions.php');
 ?>
 
 <!-- main-navbar -->

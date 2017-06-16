@@ -1,4 +1,3 @@
-<?php require_once('config/dbconfig.php') ?>
 
 <!-- Display Functions -->
 <?php   
@@ -110,7 +109,7 @@ function prepareUploadedImage($imageType) {
             $type = "p";
         }
 
-        $imgGallary = './../../database/imgGallery/';
+        $imgGallary = './../public/img/imgGallery/';
         $fileTmpName = $imageType['tmp_name'];
         $fileExtension = pathinfo($imageType['name'])['extension'];
         $fileName = $type.time().".$fileExtension";
@@ -135,6 +134,65 @@ function prepareUploadedImage($imageType) {
             header('location: add-backend.php?status=fail&postType='.$postType.'&page='.$page);
         }
     }
-
 } 
+?>
+
+<!-- Query Fuctions -->
+<?php 
+    function listPost($postType, $num_post, $conn) {
+        $sql = "SELECT * FROM $postType ORDER BY updated DESC LIMIT $num_post";
+        $result = $conn->query($sql);
+
+        $num_rows = $result->num_rows;
+        $row = array();
+        while ($row[] = $result->fetch_object());
+
+        $id = $row[0]->id;
+        $title = $row[0]->title;
+        $featureImage = $row[0]->featureImage;
+        $content = $row[0]->content;
+        $date = $row[0]->updated;
+        ?>
+        <div class="line main-news">
+            <a href="single-news-1.html">
+                <h3><?php echo $title ?></h3>
+            </a>
+            <div class="col-xs-12 col-md-4">
+                <a href="single-news-1.html">
+                    <img class="img-thumbnail" src="<?php echo $featureImage ?>">
+                </a>
+            </div>
+            <div class="col-xs-12 col-md-8">
+                <?php echo $content ?>
+                <p>
+                    <a href="single-news-1.html">Read More...</a>
+                </p>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+
+        <div class="line sub-news">
+        <?php
+
+            for($i=1; $i<$num_rows; $i++) { ?>
+                <div class="col-xs-12 col-md-3 sub-post">
+                    <div class="col-xs-4 col-md-12">
+                        <a href="single-news-2.html">
+                            <img class="img-thumbnail img-feature" src="<?php echo $row[$i]->featureImage ?>">
+                        </a>
+                    </div>
+                    <div class="col-xs-8 col-md-12">
+                        <a href="single-news-2.html">
+                            <h4 class="post-tilte"><?php echo $row[$i]->title ?></h4>
+                        </a>
+                    </div>
+                </div>
+        <?php
+            }
+        ?>
+        <div class="clearfix"></div>
+        </div>
+<?php    
+    }
+
 ?>

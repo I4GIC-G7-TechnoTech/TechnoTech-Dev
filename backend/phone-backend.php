@@ -1,10 +1,10 @@
 <?php 
-	$postType = "wiki";
-    $page = "Wiki";
+	$postType = "phone";
+    $page = "Phone";
 
     require_once('header-backend.php');
-    require_once('./../../config/dbconfig.php');
-    require_once('./../../functions.php');
+    require_once('./../config/dbconfig.php');
+    require_once('./../functions.php');
    
     /* display page content */ 
     require_once('template-backend.php'); 

@@ -11,10 +11,10 @@
 		$result = $conn->query($sql);
 
 		if ($result) {
-			header("location: news-backend.php?status=success");
+			header('location: backend.php?status=success&postType='.$postType.'&page='.$page);
 		}
 		else {
-			header("location: news-backend.php?status=fail");
+			header('location: backend.php?status=fail&postType='.$postType.'&page='.$page);
 		}
 	}
 ?>

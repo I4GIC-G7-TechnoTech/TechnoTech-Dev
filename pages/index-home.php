@@ -165,6 +165,46 @@
             <div class="clearfix"></div>
         </div>
         <!-- END phone-and-computer -->
+        <br>
+        
+        <!-- Camera Section -->
+        <div class="line section-camera">
+            <h2 class="home-section">Camera</h2>
+            <hr>
+            <?php 
+                $postType = 'camera';
+
+                $row = showLatestPost($postType, $conn);
+                $postUrl = 'single.php?postType='.$postType.'&id='.$row->id;
+            ?>
+            <div class="line main-<?php echo $postType ?>">
+                <a href="<?php echo $postUrl ?>">
+                    <h3><?php echo $row->title ?></h3>
+                </a>
+                <div class="col-xs-12 col-md-8">
+                    <?php echo $row->content ?>
+                    <p>
+                        <a href="<?php echo $postUrl ?>">Read More...</a>
+                    </p>
+                </div>
+                <div class="col-xs-12 col-md-4">
+                    <a href="<?php echo $postUrl ?>">
+                        <img class="img-thumbnail" src="<?php echo $row->featureImage ?>">
+                    </a>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <?php
+                list4Posts($postType, $conn);
+            ?>
+            <div class="float-right">
+                <a href="archive-<?php echo $postType ?>.php">
+                    <button type="button" class="btn btn-primary">View More >></button>
+                </a>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <!-- END: Camera Section -->
         <!-- END CONTENT -->
 	</div>
 

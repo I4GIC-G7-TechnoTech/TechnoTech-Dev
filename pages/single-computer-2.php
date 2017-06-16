@@ -6,7 +6,7 @@
         <!-- Content -->
         <div class="archive-title">
             <h1>5 best gaming laptops 2017: top gaming notebook reviews</h1>
-            <strong>Author: <em>Sak Sothea</em></strong>
+            <strong>Author: <em>Sotha DX</em></strong>
             <hr class="main-title">
         </div>
         <div class="col-sm-12 post-content">

@@ -1,35 +1,31 @@
 <?php   
     require_once('header.php');
+    include '../config/dbconfig.php';
 ?>
-
-
-
         <!-- Content -->
+     
+          <?php
+                    $getID = $_GET['id'];
+                    $query = mysqli_query($conn,"SELECT * FROM computer where id=".$getID);
+                    while ($row = mysqli_fetch_assoc($query)) {
+                ?>
         <div class="archive-title">
-            <h1>The 4 best laptops of 2017: the top laptops ranked</h1>
+            <h1><?php echo $row['title'];?></h1>
             <strong>Author: <em>Sak Sothea</em></strong>
             <hr class="main-title">
         </div>
         <div class="col-sm-12 post-content">
-            <p>
-                We’ve modified our best laptops buying guide to better reflect our newly revised ranking procedures. In doing so, the Asus Chromebook Flip has been added at number 4 while you can find the Acer Aspire S 13 at number 6! Read on to find out why these are some of the best laptops you can buy in 2017.
-            </p>
-
             <div class="col-xs-12 col-md-4">
                 <img class="img-thumbnail" src="public\img\pc1.jpg">
             </div>
             <div class="col-xs-12 col-md-8">
-                <p>
-                    It was only a few years back that we were all prematurely declaring the death of the PC, thanks to the swarm of tablet computers that flooded market following the lead of the iPad in 2010. While a handful of these slates saw success, many did not, as many buyers grew interested in Chromebooks and 2-in-1 devices.
-                </p>
-                <p>
-                    As new device categories have penetrated the market, those interested in touchscreens and lengthy battery life are now given the option of Ultrabooks, such as the HP Spectre. Still, if you aren’t deterred by the prospect of malware, more traditional offerings, like the MacBook, still remain.
-                </p>
-                <!-- <p>
-                    That said, the versatility of convertibles like the Acer Swift 7 comes in handy for more than just creative types. For instance, if you’ve ever wanted to binge-watch a Netflix show in bed, having a 2-in-1 notebook means you can do so with or without the obstruction of a physical keyboard.  
-                </p> -->
+                   <?php echo $row['content'];?>
+              
             </div>
 
+            <?php
+                   }     
+                 ?>
             <div class="col-xs-12 col-md-12">
             <h4><b>1. Dell XPS 13</b></h4>
                 <p>

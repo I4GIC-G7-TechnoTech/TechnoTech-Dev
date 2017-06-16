@@ -18,7 +18,7 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li><a href="home-page.html">Home <span class="sr-only">(current)</span></a></li>
+                    <li><a href="index-home.php">Home <span class="sr-only">(current)</span></a></li>
                     <li><a href="archive-news.html">News <span class="sr-only">(current)</span></a></li>
                     <li><a href="archive-wiki.html">Tech Wiki <span class="sr-only">(current)</span></a></li>
                     <li><a href="archive-phone.html">Phone <span class="sr-only">(current)</span></a></li>

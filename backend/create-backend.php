@@ -1,6 +1,6 @@
 <?php 
 	require_once('./../config/dbconfig.php');
-	require_once('./../functions.php');
+	require_once('functions-backend.php');
 ?>
 
 <?php 
@@ -19,8 +19,8 @@
 	$result = $conn->query($sql);
 
 	if ($result) {
-		$featureImage = prepareUploadedImage($_FILES['featureImage']);
-		$postImage = prepareUploadedImage($_FILES['postImage']);
+		$featureImage = prepareUploadedImage($_FILES['featureImage'], $postType, $page);
+		$postImage = prepareUploadedImage($_FILES['postImage'], $postType, $page);
 
 		$sql = "UPDATE $postType SET featureImage = '$featureImage', postImage = '$postImage' WHERE title = '$title'";
 		

@@ -35,7 +35,7 @@ function listRecords($postType, $conn) {
 
 <!-- Function: Prepare PATH for Upload Image -->
 <?php 
-function prepareUploadedImage($imageType) {
+function prepareUploadedImage($imageType, $postType, $page) {
     if (isset($imageType)) {
         if ($imageType == $_FILES['featureImage']) {
             $type = "f";

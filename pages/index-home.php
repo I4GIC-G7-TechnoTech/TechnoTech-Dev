@@ -15,164 +15,129 @@
         ?>
 
         <!-- news -->
-        <div class="line section-news" id="section-news">
-            
+        <div class="line section-news" id="section-news"> 
             <h2>Tech News</h2>
             <hr>
             <?php 
                 $postType = 'news';
-                $result = listPost($postType, 5, $conn);
+                $row = showLatestPost($postType, $conn);
             ?>
-        <!-- END: News -->
+            <div class="line main-<?php echo $postType ?>">
+                <a href="single-news-1.html">
+                    <h3><?php echo $row->title ?></h3>
+                </a>
+                <div class="col-xs-12 col-md-4">
+                    <a href="single-news-1.html">
+                        <img class="img-thumbnail" src="<?php echo $row->featureImage ?>">
+                    </a>
+                </div>
+                <div class="col-xs-12 col-md-8">
+                    <?php echo $row->content ?>
+                    <p>
+                        <a href="single-news-1.html">Read More...</a>
+                    </p>
+                </div>
+                <div class="clearfix"></div>
+            </div>
 
-            
+            <?php
+                list4Posts($postType, $conn);
+            ?>
+        </div>
+        <!-- END: News Section -->
 
         <!-- wiki -->
         <div class="line section-wiki">
             <h2>Tech Wiki</h2>
             <hr>
-            <div class="line main-wiki">
+            <?php 
+                $postType = 'wiki';
+
+                $row = showLatestPost($postType, $conn);
+            ?>
+            <div class="line main-<?php echo $postType ?>">
+                <a href="single-news-1.html">
+                    <h3><?php echo $row->title ?></h3>
+                </a>
                 <div class="col-xs-12 col-md-8">
-                    <a href="single-wiki-1.html">
-                        <h3>How to Fix “USB Device Not Recognized” in Windows</h3>
-                    </a>
-                    <p class="post-excerpt">
-                        One of the common and annoying problem with USB drive in Windows is the “USB Device Not Recognized” popup message when you plug in the device into your USB port. Here are several methods to fix this problem so that you can try another one if any fix does not work for you.
+                    <?php echo $row->content ?>
+                    <p>
+                        <a href="single-news-1.html">Read More...</a>
                     </p>
                 </div>
                 <div class="col-xs-12 col-md-4">
-                    <a href="single-wiki-1.html">
-                        <img class="img-thumbnail img-feature" src="public/img/usb-1.jpg">
+                    <a href="single-news-1.html">
+                        <img class="img-thumbnail" src="<?php echo $row->featureImage ?>">
                     </a>
                 </div>
                 <div class="clearfix"></div>
             </div>
-            <div class="line sub-wiki">
-                <div class="related-post">
-                    <div class="col-xs-12 col-md-3 sub-post">
-                        <div class="col-xs-4 col-md-12">
-                            <a href="single-wiki-2">
-                                <img class="img-thumbnail img-feature" src="public/img/usb-6.jpg">
-                            </a>
-                        </div>
-                        <div class="col-xs-8 col-md-12">
-                            <a href="single-wiki-2">
-                                <h4 class="post-tilte">How to Fix “Windows was Unable to Complete the Format”</h4>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-md-3 sub-post">
-                        <div class="col-xs-4 col-md-12">
-                            <a href="#">
-                                <img class="img-thumbnail img-feature" src="public/img/how-to-hot-cpu.jpg">
-                            </a>
-                        </div>
-                        <div class="col-xs-8 col-md-12">
-                            <a href="#">
-                                <h4 class="post-tilte">How to Fix Hot CPU</h4>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-md-3 sub-post">
-                        <div class="col-xs-4 col-md-12">
-                            <a href="#">
-                                <img class="img-thumbnail img-feature" src="public/img/win10-1.jpg">
-                            </a>
-                        </div>
-                        <div class="col-xs-8 col-md-12">
-                            <a href="#">
-                                <h4 class="post-tilte">How to Upgrade to Windows 10</h4>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-md-3 sub-post">
-                        <div class="col-xs-4 col-md-12">
-                            <a href="#">
-                                <img class="img-thumbnail img-feature" src="public/img/how-to-speed.jpg">
-                            </a>
-                        </div>
-                        <div class="col-xs-8 col-md-12">
-                            <a href="#">
-                                <h4 class="post-tilte">How to Boost Your Computer Speed</h4>
-                            </a>
-                        </div>
-                    </div>
-                     <div class="float-right">
-                        <a href="archive-wiki.html">
-                            <button type="submit" class="btn btn-primary">View More >></button>
-                        </a>
-                    </div>
-                    <div class="clearfix"></div>
-                </div>
-            </div>
+            <?php
+                list4Posts($postType, $conn);
+            ?>
         </div>
-        <!-- END Wiki -->
+        <!-- END: wiki-section -->
 
         <!-- phone-and-computer -->
         <div class="line section-phone-and-computer">
+            
             <!-- phone -->
             <div class="col-xs-12 col-md-6 phone"> 
                 <h2>Phone</h2>
                 <hr>
-                <div class="line main-phone">
+                <?php 
+                    $postType = 'phone';
+
+                    $row = showLatestPost($postType, $conn);
+                ?>
+                <div class="line main-<?php echo $postType ?>">
                     <div class="col-xs-6 col-md-12">
                         <a href="single-phone-1.html">
-                            <h3>iPhone 8 Release Date and Rumors</h3>
+                            <h3><?php $row->title ?></h3>
                         </a>
                     </div>
                     <div class="col-xs-6 col-md-12">
                         <a href="single-phone-1.html">
-                            <img class="img-thumbnail" src="public/img/page1.jpg" alt="image">
+                            <img class="img-thumbnail" src="<?php echo $row->featureImage ?>" alt="image">
                         </a>
                     </div>
                 </div>
-                <div class="col-xs-12 col-md-6 sub-post">
-                    <div class="col-xs-4 col-md-12">
-                        <a href="sigle-phone-2.html">
-                            <img class="img-thumbnail img-feature" src="public/img/page2.2.jpg">
-                        </a>
-                    </div>
-                    <div class="col-xs-8 col-md-12">
-                        <a href="single-phone-2.html">
-                            <h4 class="post-tilte">Huawei P9 Price and Release Date</h4>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-xs-12 col-md-6 sub-post">
-                    <div class="col-xs-4 col-md-12">
-                        <a href="#">
-                            <img class="img-thumbnail img-feature" src="public/img/page3.jpg">
-                        </a>
-                    </div>
-                    <div class="col-xs-8 col-md-12">
-                        <a href="#">
-                            <h4 class="post-tilte">Best free iPhone apps 2017</h4>
-                        </a>
-                    </div>
-                </div>
+
+                <?php 
+                    list2Posts($postType, $conn);
+                ?>
                 <div class="float-right">
                     <a href="archive-phone.html">
-                        <button type="submit" class="btn btn-primary">View More >></button>
+                        <button type="submit" class="btn btn-primary"> View More >> </button>
                     </a>
                 </div>
             </div>
             <!-- END phone -->
+
             <!-- computer -->
-            <div class="col-xs-12 col-md-6 phone"> 
+            <div class="col-xs-12 col-md-6 computer"> 
                 <h2>Computer</h2>
                 <hr>
-                <div class="line main-computer">
+                <?php 
+                    $postType = 'computer';
+
+                    $row = showLatestPost($postType, $conn);
+                    print_r($row);
+                ?>
+                <div class="line main-<?php echo $postType ?>">
                     <div class="col-xs-6 col-md-12">
                         <a href="single-computer-1.html">
-                            <h3>The 4 best laptops of 2017</h3>
+                            <h3><?php $row->title ?></h3>
                         </a>
                     </div>
                     <div class="col-xs-6 col-md-12">
                         <a href="single-computer-1.html">
-                            <img class="img-thumbnail" src="public/img/pc1.jpg" alt="image">
+                            <img class="img-thumbnail" src="<?php echo $row->featureImage ?> alt="image">
                         </a>
                     </div>
                 </div>
+
+
                 <div class="col-xs-12 col-md-6 sub-post">
                     <div class="col-xs-4 col-md-12">
                         <a href="single-computer-2.html">

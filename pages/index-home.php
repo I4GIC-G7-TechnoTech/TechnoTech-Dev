@@ -16,7 +16,7 @@
 
         <!-- news -->
         <div class="line section-news" id="section-news"> 
-            <h2>Tech News</h2>
+            <h2 class="home-section">Tech News</h2>
             <hr>
             <?php 
                 $postType = 'news';
@@ -44,12 +44,17 @@
             <?php
                 list4Posts($postType, $conn);
             ?>
+            <div class="float-right">
+                <a href="archive-<?php echo $postType ?>.php">
+                    <button type="button" class="btn btn-primary">View More >></button>
+                </a>
+            </div>
         </div>
         <!-- END: News Section -->
-
+        <br>
         <!-- wiki -->
         <div class="line section-wiki">
-            <h2>Tech Wiki</h2>
+            <h2 class="home-section">Tech Wiki</h2>
             <hr>
             <?php 
                 $postType = 'wiki';
@@ -77,15 +82,21 @@
             <?php
                 list4Posts($postType, $conn);
             ?>
+            <div class="float-right">
+                <a href="archive-<?php echo $postType ?>.php">
+                    <button type="button" class="btn btn-primary">View More >></button>
+                </a>
+            </div>
         </div>
         <!-- END: wiki-section -->
-
+        <br>
+        <br>
         <!-- phone-and-computer -->
         <div class="line section-phone-and-computer">
             
             <!-- phone -->
             <div class="col-xs-12 col-md-6 phone"> 
-                <h2>Phone</h2>
+                <h2 class="home-section">Phone</h2>
                 <hr>
                 <?php 
                     $postType = 'phone';
@@ -110,8 +121,8 @@
                     list2Posts($postType, $conn);
                 ?>
                 <div class="float-right">
-                    <a href="archive-phone.html">
-                        <button type="submit" class="btn btn-primary"> View More >> </button>
+                    <a href="archive-<?php echo $postType ?>.php">
+                        <button type="button" class="btn btn-primary">View More >></button>
                     </a>
                 </div>
             </div>
@@ -119,7 +130,7 @@
 
             <!-- computer -->
             <div class="col-xs-12 col-md-6 computer"> 
-                <h2>Computer</h2>
+                <h2 class="home-section">Computer</h2>
                 <hr>
                 <?php 
                     $postType = 'computer';
@@ -143,13 +154,13 @@
                 <?php 
                     list2Posts($postType, $conn);
                 ?>
-                <div class="float-right">
-                    <a href="archive-computer.html">
-                        <button type="submit" class="btn btn-primary">View More >></button>
-                    </a>
-                </div>
+                
             </div>
-
+            <div class="float-right">
+                <a href="archive-<?php echo $postType ?>.php">
+                    <button type="button" class="btn btn-primary">View More >></button>
+                </a>
+            </div>
             <!-- END computer -->
             <div class="clearfix"></div>
         </div>

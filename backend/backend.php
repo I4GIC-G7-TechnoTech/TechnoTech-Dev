@@ -1,7 +1,10 @@
 <?php 
+    $postType = $_GET['postType'];
+    $page = $_GET['page'];
+
     require_once('header-backend.php');
     require_once('./../config/dbconfig.php');
-    require_once('./../functions.php');
+    require_once('functions-backend.php');
 ?>
 
 <div class="dashboard">
@@ -33,7 +36,7 @@
                         <td><strong>Action</strong></td>
                     </thead>
                     <tbody>
-                        <?php require_once('list-backend.php') ?>
+                        <?php listRecords($postType, $conn); ?>
                     </tbody>
                     
                 </table>
@@ -41,6 +44,5 @@
         </section>
     </div>
 </div>
-
 
 <?php require_once('footer-backend.php') ?>

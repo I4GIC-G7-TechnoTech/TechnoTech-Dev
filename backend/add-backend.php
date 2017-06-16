@@ -9,7 +9,7 @@
     }
  
     require_once('header-backend.php');
-    require_once('./../functions.php');
+    require_once('functions-backend.php');
 ?>
 
 <!-- main-navbar -->
@@ -57,7 +57,7 @@
                     <input class='form-control' type='hidden' value=<?php echo $page ?> name='page'>
 
                     <button class="btn btn-primary" type="submit" name="publish">Publish</button>
-                    <a href= "<?php echo $postType.'-backend.php' ?>">
+                    <a href= "<?php echo 'backend.php?postType='.$postType."&page=".$page ?>">
                         <button class="btn btn-warning" type="button" role="button">Cancel</button>
                     </a>
                 </form>

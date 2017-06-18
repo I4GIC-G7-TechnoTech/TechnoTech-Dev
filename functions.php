@@ -142,12 +142,12 @@
                     $title = $row->title;
                     $content = $row->content;
                     $featureImage = $row->featureImage;
-                    $postUrl = 'single.php?postTypes[$i]='.$title.'&id='.$row->id;
+                    $postUrl = 'single.php?postType='.$postTypes[$i].'&id='.$row->id;
                 ?>
                     <div class="col-xs-12 col-md-4 sub-post">
                         <div class="col-xs-12 col-md-12">
                             <a href="<?php echo $postUrl ?>">
-                                <h4 class="post-tilte"><?php echo '['.$postTypes[$i].']'." ".$row->title ?></h4>
+                                <h4 class="post-tilte"><?php echo '<span class="tags '.$postTypes[$i].'">'.$postTypes[$i].'</span>'." ".$row->title ?></h4>
                             </a>
                         </div>
                         <div class="col-xs-12 col-md-12">

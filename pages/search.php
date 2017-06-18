@@ -1,4 +1,6 @@
 <?php  
+	$page = 'Search';
+
 	require_once('./../config/dbconfig.php');
 	require_once('header.php');
 	require_once('./../functions.php');
@@ -8,6 +10,7 @@
 	}
 	
 	$postTypes = array('news', 'computer', 'phone', 'camera', 'wiki');
+	$pages = array('News', 'Computer', 'Phone', 'Camera', 'Wiki');
 ?>
 
 <div class="archive-title">
@@ -17,7 +20,7 @@
 
 <div class="row">
 	<?php
-		$havePost = searchEachPostType($postTypes, $keyword, $conn);
+		$havePost = searchEachPostType($postTypes, $pages, $keyword, $conn);
 
 		if(!$havePost) {
 			echo "No Post Found!";

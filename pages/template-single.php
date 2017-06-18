@@ -2,7 +2,7 @@
     require_once('./../config/dbconfig.php');
     require_once('./../functions.php');
 
-    $row = getPostById($postType, $id, $conn);
+    $row = getPostById($postType, $page, $id, $conn);
 ?>
 
         <!-- Title -->
@@ -25,6 +25,6 @@
         <div class="related-post">
             <h3>Related Posts</h3>
             <hr>
-            <?php listRelatedPosts($postType, $id, $conn); ?>
+            <?php listRelatedPosts($postType, $page, $id, $conn); ?>
         </div>
             

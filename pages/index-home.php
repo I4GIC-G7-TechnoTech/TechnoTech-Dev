@@ -1,4 +1,6 @@
 <?php 
+    $page = 'TechnoTech';
+
     require_once('header.php'); 
     require_once('./../functions.php');
     require_once('./../config/dbconfig.php');
@@ -17,8 +19,11 @@
             <hr>
             <?php 
                 $postType = 'news';
-                $row = showLatestPost($postType, $conn);
-                $postUrl = 'single.php?postType='.$postType.'&id='.$row->id;
+                $page = 'News';
+
+                $row = showLatestPost($postType, $page, $conn);
+                // $postUrl = 'single.php?postType='.$postType.'page='.$page.'&id='.$row->id;
+                $postUrl = 'single.php?postType='.$postType.'&page='.$page.'&id='.$row->id;
             ?>
             <div class="line main-<?php echo $postType ?>">
                 <a href="<?php echo $postUrl ?>">
@@ -39,7 +44,7 @@
             </div>
 
             <?php
-                list4Posts($postType, $conn);
+                list4Posts($postType, $page, $conn);
             ?>
             <div class="float-right">
                 <a href="archive-<?php echo $postType ?>.php">
@@ -55,9 +60,11 @@
             <hr>
             <?php 
                 $postType = 'wiki';
+                $page = 'Tech Wiki';
 
-                $row = showLatestPost($postType, $conn);
-                $postUrl = 'single.php?postType='.$postType.'&id='.$row->id;
+                $row = showLatestPost($postType, $page, $conn);
+                // $postUrl = 'single.php?postType='.$postType.'&id='.$row->id;
+                $postUrl = 'single.php?postType='.$postType.'&page='.$page.'&id='.$row->id;
             ?>
             <div class="line main-<?php echo $postType ?>">
                 <a href="<?php echo $postUrl ?>">
@@ -77,7 +84,7 @@
                 <div class="clearfix"></div>
             </div>
             <?php
-                list4Posts($postType, $conn);
+                list4Posts($postType, $page, $conn);
             ?>
             <div class="float-right">
                 <a href="archive-<?php echo $postType ?>.php">
@@ -97,9 +104,11 @@
                 <hr>
                 <?php 
                     $postType = 'phone';
+                    $page = 'Page';
 
-                    $row = showLatestPost($postType, $conn);
-                    $postUrl = 'single.php?postType='.$postType.'&id='.$row->id;
+                    $row = showLatestPost($postType, $page, $conn);
+                    // $postUrl = 'single.php?postType='.$postType.'&id='.$row->id;
+                    $postUrl = 'single.php?postType='.$postType.'&page='.$page.'&id='.$row->id;
                 ?>
                 <div class="line main-<?php echo $postType ?>">
                     <div class="col-xs-6 col-md-12">
@@ -115,7 +124,7 @@
                 </div>
 
                 <?php 
-                    list2Posts($postType, $conn);
+                    list2Posts($postType, $page, $conn);
                 ?>
                 <div class="float-right">
                     <a href="archive-<?php echo $postType ?>.php">
@@ -131,9 +140,11 @@
                 <hr>
                 <?php 
                     $postType = 'computer';
+                    $page = 'Computer';
 
-                    $row = showLatestPost($postType, $conn);
-                    $postUrl = 'single.php?postType='.$postType.'&id='.$row->id;
+                    $row = showLatestPost($postType, $page, $conn);
+                    // $postUrl = 'single.php?postType='.$postType.'&id='.$row->id;
+                    $postUrl = 'single.php?postType='.$postType.'&page='.$page.'&id='.$row->id;
                 ?>
                 <div class="line main-<?php echo $postType ?>">
                     <div class="col-xs-6 col-md-12">
@@ -149,7 +160,7 @@
                 </div>
 
                 <?php 
-                    list2Posts($postType, $conn);
+                    list2Posts($postType, $page, $conn);
                 ?>
                 
             </div>
@@ -170,9 +181,11 @@
             <hr>
             <?php 
                 $postType = 'camera';
+                $page = 'Camera';
 
-                $row = showLatestPost($postType, $conn);
-                $postUrl = 'single.php?postType='.$postType.'&id='.$row->id;
+                $row = showLatestPost($postType, $page, $conn);
+                // $postUrl = 'single.php?postType='.$postType.'&id='.$row->id;
+                $postUrl = 'single.php?postType='.$postType.'&page='.$page.'&id='.$row->id;
             ?>
             <div class="line main-<?php echo $postType ?>">
                 <a href="<?php echo $postUrl ?>">
@@ -192,7 +205,7 @@
                 <div class="clearfix"></div>
             </div>
             <?php
-                list4Posts($postType, $conn);
+                list4Posts($postType, $page, $conn);
             ?>
             <div class="float-right">
                 <a href="archive-<?php echo $postType ?>.php">

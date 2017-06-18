@@ -1,6 +1,6 @@
 <!-- Query Fuctions -->
 <?php 
-    function list2Posts($postType, $conn) {
+    function list2Posts($postType, $page, $conn) {
         $num_post = 3;
         $sql = "SELECT * FROM $postType ORDER BY updated DESC LIMIT $num_post";
         $result = $conn->query($sql);
@@ -13,7 +13,7 @@
         <div class="line sub-<?php echo $postType ?>">
         <?php
             for($i=1; $i<$num_post; $i++) { 
-                $postUrl = 'single.php?postType='.$postType.'&id='.$row[$i]->id; 
+                    $postUrl = 'single.php?postType='.$postType.'&page='.$page.'&id='.$row[$i]->id;
                 ?>
                 <div class="col-xs-12 col-md-6 sub-post">
                     <div class="col-xs-4 col-md-12">
@@ -37,7 +37,7 @@
 ?>
 
 <?php 
-    function list4Posts($postType, $conn) {
+    function list4Posts($postType, $page, $conn) {
         $num_post = 5;
         $sql = "SELECT * FROM $postType ORDER BY created DESC LIMIT $num_post";
         $result = $conn->query($sql);
@@ -50,7 +50,7 @@
         <div class="line sub-<?php echo $postType ?>">
         <?php
             for($i=1; $i<$num_post; $i++) { 
-            $postUrl = 'single.php?postType='.$postType.'&id='.$row[$i]->id; 
+            $postUrl = 'single.php?postType='.$postType.'&page='.$page.'&id='.$row[$i]->id;
         ?>
                 <div class="col-xs-12 col-md-3 sub-post">
                     <div class="col-xs-4 col-md-12">
@@ -74,7 +74,7 @@
 ?>
 
 <?php 
-    function showLatestPost($postType, $conn) {
+    function showLatestPost($postType, $page, $conn) {
         $sql = "SELECT * FROM $postType ORDER BY updated DESC LIMIT 1";
         $result = $conn->query($sql);
         return $row = $result->fetch_object();
@@ -82,7 +82,7 @@
 ?>
 
 <?php 
-    function getPostById($postType, $id, $conn) {
+    function getPostById($postType, $page, $id, $conn) {
         $sql = "SELECT * FROM $postType WHERE id = $id";
         $result = $conn->query($sql);
         return $row = $result->fetch_object();
@@ -90,7 +90,7 @@
 ?>
 
 <?php 
-    function listRelatedPosts($postType, $id, $conn) {
+    function listRelatedPosts($postType, $page, $id, $conn) {
         $num_post = 5;
         $sql = "SELECT * FROM $postType WHERE id <> $id LIMIT $num_post";
         $result = $conn->query($sql);
@@ -103,7 +103,7 @@
         <div class="line sub-<?php echo $postType ?>">
         <?php
             for($i=1; $i<$num_post; $i++) { 
-                $postUrl = 'single.php?postType='.$postType.'&id='.$row[$i]->id;
+                $postUrl = 'single.php?postType='.$postType.'&page='.$page.'&id='.$row[$i]->id;
         ?>
                 <div class="col-xs-12 col-md-3 sub-post">
                     <div class="col-xs-4 col-md-12">
@@ -127,7 +127,7 @@
 ?>
 
 <?php  
-    function searchEachPostType($postTypes, $keyword, $conn) {
+    function searchEachPostType($postTypes, $pages, $keyword, $conn) {
         $havePost = false;
         for ($i=0; $i<sizeof($postTypes); $i++) {
             $sql = "SELECT * FROM $postTypes[$i] WHERE title LIKE '%" . $keyword . "%' OR content LIKE '%" . $keyword ."%'";
@@ -142,7 +142,8 @@
                     $title = $row->title;
                     $content = $row->content;
                     $featureImage = $row->featureImage;
-                    $postUrl = 'single.php?postType='.$postTypes[$i].'&id='.$row->id;
+                    
+                    $postUrl = 'single.php?postType='.$postTypes[$i].'&page='.$pages[$i].'&id='.$row->id;
                 ?>
                     <div class="col-xs-12 col-md-4 sub-post">
                         <div class="col-xs-12 col-md-12">

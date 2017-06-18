@@ -155,7 +155,7 @@ function prepareUploadedImage($imageType, $postType, $page) {
 
 		                    <div class="form-group">
 		                        <label><h3>Content</h3></label>
-		                        <textarea class="tinymce" name="content"><?php echo $content ?></textarea>
+		                        <textarea class="ckeditor" id="wysiwyg" name="wysiwyg"><?php echo $content ?></textarea>
 		                    </div>
                     	</div> 
                         <div class='modal-footer'>

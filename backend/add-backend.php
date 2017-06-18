@@ -35,7 +35,8 @@
 
                     <div class="form-group">
                         <label><h3>Content</h3></label>
-                        <textarea class="tinymce" name="content"></textarea>
+                        <textarea class="ckeditor" id="wysiwyg" name="wysiwyg"></textarea>
+                        
                     </div>
 
                     <div class="form-group">

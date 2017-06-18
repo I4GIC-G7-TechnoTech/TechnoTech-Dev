@@ -1,6 +1,6 @@
 tinymce.init ({
 	/*replace textarea.tinymce with WYSIWYG Editor*/
-	selector: "textarea.tinymce",
+	selector: "textarea#wysiwyg",
 
 	/* theme of editor */
 	theme: "modern",

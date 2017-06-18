@@ -142,6 +142,7 @@
                     $title = $row->title;
                     $content = $row->content;
                     $featureImage = $row->featureImage;
+                    
                     $postUrl = 'single.php?postType='.$postTypes[$i].'&page='.$pages[$i].'&id='.$row->id;
                 ?>
                     <div class="col-xs-12 col-md-4 sub-post">

@@ -19,10 +19,9 @@
             <hr>
             <?php 
                 $postType = 'news';
-                $page = 'News';
+                $page = 'Tech News';
 
                 $row = showLatestPost($postType, $page, $conn);
-                // $postUrl = 'single.php?postType='.$postType.'page='.$page.'&id='.$row->id;
                 $postUrl = 'single.php?postType='.$postType.'&page='.$page.'&id='.$row->id;
             ?>
             <div class="line main-<?php echo $postType ?>">
@@ -63,7 +62,6 @@
                 $page = 'Tech Wiki';
 
                 $row = showLatestPost($postType, $page, $conn);
-                // $postUrl = 'single.php?postType='.$postType.'&id='.$row->id;
                 $postUrl = 'single.php?postType='.$postType.'&page='.$page.'&id='.$row->id;
             ?>
             <div class="line main-<?php echo $postType ?>">
@@ -104,10 +102,9 @@
                 <hr>
                 <?php 
                     $postType = 'phone';
-                    $page = 'Page';
+                    $page = 'Phone';
 
                     $row = showLatestPost($postType, $page, $conn);
-                    // $postUrl = 'single.php?postType='.$postType.'&id='.$row->id;
                     $postUrl = 'single.php?postType='.$postType.'&page='.$page.'&id='.$row->id;
                 ?>
                 <div class="line main-<?php echo $postType ?>">
@@ -143,7 +140,6 @@
                     $page = 'Computer';
 
                     $row = showLatestPost($postType, $page, $conn);
-                    // $postUrl = 'single.php?postType='.$postType.'&id='.$row->id;
                     $postUrl = 'single.php?postType='.$postType.'&page='.$page.'&id='.$row->id;
                 ?>
                 <div class="line main-<?php echo $postType ?>">
@@ -184,7 +180,6 @@
                 $page = 'Camera';
 
                 $row = showLatestPost($postType, $page, $conn);
-                // $postUrl = 'single.php?postType='.$postType.'&id='.$row->id;
                 $postUrl = 'single.php?postType='.$postType.'&page='.$page.'&id='.$row->id;
             ?>
             <div class="line main-<?php echo $postType ?>">

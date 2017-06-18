@@ -10,7 +10,7 @@
 	}
 	
 	$postTypes = array('news', 'computer', 'phone', 'camera', 'wiki');
-	$pages = array('News', 'Computer', 'Phone', 'Camera', 'Wiki');
+	$pages = array('Tech News', 'Computer', 'Phone', 'Camera', 'Tech Wiki');
 ?>
 
 <div class="archive-title">

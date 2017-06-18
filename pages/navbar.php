@@ -26,11 +26,11 @@
                     <li><a href="archive-camera.html">Camera <span class="sr-only">(current)</span></a></li>
                     <li><a href="about-us.html">About us <span class="sr-only">(current)</span></a></li>
                 </ul>
-                <form class="navbar-form navbar-right">
+                <form class="navbar-form navbar-right" method="POST" name="search-form" action="search.php">
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Search">
+                        <input type="text" class="form-control" name="keyword" placeholder="Search">
                     </div>
-                    <button type="submit" class="btn btn-default"><i class="fa fa-search" aria-hidden="true"></i></button>
+                    <button type="submit" name="search" class="btn btn-default"><i class="fa fa-search" aria-hidden="true"></i></button>
                 </form>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->

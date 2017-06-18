@@ -39,7 +39,7 @@
 <?php 
     function list4Posts($postType, $conn) {
         $num_post = 5;
-        $sql = "SELECT * FROM $postType ORDER BY updated DESC LIMIT $num_post";
+        $sql = "SELECT * FROM $postType ORDER BY created DESC LIMIT $num_post";
         $result = $conn->query($sql);
 
         $num_rows = $result->num_rows;
@@ -123,5 +123,44 @@
         <div class="clearfix"></div>
         </div>
 <?php    
+    }
+?>
+
+<?php  
+    function searchEachPostType($postTypes, $keyword, $conn) {
+        $havePost = false;
+        for ($i=0; $i<sizeof($postTypes); $i++) {
+            $sql = "SELECT * FROM $postTypes[$i] WHERE title LIKE '%" . $keyword . "%' OR content LIKE '%" . $keyword ."%'";
+            $result = $conn->query($sql);
+
+            if (!$result) {
+                continue;
+            }
+            else {
+                while ($row = $result->fetch_object()) {
+                    $id = $row->id;
+                    $title = $row->title;
+                    $content = $row->content;
+                    $featureImage = $row->featureImage;
+                    $postUrl = 'single.php?postTypes[$i]='.$title.'&id='.$row->id;
+                ?>
+                    <div class="col-xs-12 col-md-4 sub-post">
+                        <div class="col-xs-12 col-md-12">
+                            <a href="<?php echo $postUrl ?>">
+                                <h4 class="post-tilte"><?php echo '['.$postTypes[$i].']'." ".$row->title ?></h4>
+                            </a>
+                        </div>
+                        <div class="col-xs-12 col-md-12">
+                            <a href="<?php echo $postUrl ?>">
+                                <img class="img-thumbnail img-feature" src="<?php echo $row->featureImage ?>">
+                            </a>
+                        </div>
+                    </div>
+    <?php
+                     $havePost = true;
+                }
+            }
+        }
+        return $havePost;
     }
 ?>

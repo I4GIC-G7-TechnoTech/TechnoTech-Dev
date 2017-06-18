@@ -1,16 +1,9 @@
 <?php 
     require_once('./../config/dbconfig.php');
     require_once('./../functions.php');
+
+    $row = getPostById($postType, $id, $conn);
 ?>
-
-<body>
-    <div class="top-container">
-        <?php 
-            $row = getPostById($postType, $id, $conn);
-
-            /* Navbar */
-            require_once('navbar.php');
-        ?>
 
         <!-- Title -->
         <div class="archive-title">
@@ -18,7 +11,6 @@
             <hr>
         </div>
 
-        <!-- Title -->
         <div class="phone-content">
             <div class="col-xs-12 col-md-5">
                 <img class="img-thumbnail" src="<?php echo $row->featureImage ?>" alt="phone-image">
@@ -34,4 +26,5 @@
             <h3>Related Posts</h3>
             <hr>
             <?php listRelatedPosts($postType, $id, $conn); ?>
+        </div>
             

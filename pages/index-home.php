@@ -7,9 +7,6 @@
 <body>
 	<div class="top-container">
 		<?php 
-            /* Navbar */
-            require_once('navbar.php'); 
-
             /* Slider */
             require_once('slider.php');
         ?>

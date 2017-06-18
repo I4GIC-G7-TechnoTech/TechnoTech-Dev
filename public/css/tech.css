@@ -156,6 +156,33 @@ span.step {
   	width: 1.6em; 
 }
 
+span.news {
+	background-color: #F56A4C;
+}
+
+span.phone {
+	background-color: #F5CC28;
+}
+
+span.computer {
+	background-color: #59D145;
+}
+
+span.camera {
+	background-color: #32C6F7;
+}
+
+span.wiki {
+	background-color: #AA60E0;
+}
+
+span.tags {
+	border-radius: 3px;
+	color: white;
+	padding: 3px 4px 2px 4px;
+	text-transform: uppercase; 
+}
+
 .sr-only:hover {
 	background-color: white !important;
 }

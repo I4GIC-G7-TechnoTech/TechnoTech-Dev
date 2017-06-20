@@ -8,22 +8,31 @@
 		$content = $_POST['content'];
 		$youtubeLink = $_POST['youtubeLink'];
 
+		$featureImage = $_POST['featureImage'];
+		$postImage = $_POST['postImage'];
+
+
 		$postType = $_POST['postType'];
 		$page = $_POST['page'];
+		$imageType = $_FILES['postImage'];	
 
-		$featureImage = prepareUploadedImage($_FILES['featureImage'], $postType, $page);
-		echo $featureImage;
-		$postImage = prepareUploadedImage($_FILES['postImage'], $postType, $page);
-		echo $postImage;
+
+		$featureImage = updateUploadImage($id, $_FILES['featureImage'], $featureImage, $postType, $page, $conn);
+
+		$postImage = updateUploadImage($id, $_FILES['postImage'], $postImage, $postType, $page, $conn);
+
 
 		$sql = "UPDATE $postType SET title = '$title', content = '$content', featureImage = '$featureImage', postImage = '$postImage', youtubeLink = '$youtubeLink', updated = NOW() WHERE id = $id";
+		echo $sql;
 		$result = $conn->query($sql);
 
+
+
 		if ($result) {
-			// header('location: backend.php?status=success&postType='.$postType.'&page='.$page);
+			header('location: edit-backend.php?status=success&postType='.$postType.'&page='.$page.'&id='.$id);
 		}
 		else {
-			// header('location: backend.php?status=fail&postType='.$postType.'&page='.$page);
+			header('location: edit-backend.php?status=fail&postType='.$postType.'&page='.$page.'&id='.$id);
 		}
 	}
 ?>

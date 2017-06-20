@@ -29,7 +29,6 @@ function listRecords($postType, $page, $conn) {
                         </form>
                         
                         <?php 
-                            // showUpdateButton($id, 'edit-backend.php', $title, $content, $postType);
                             showDeleteButton($id, 'delete-backend.php', $postType); 
                         ?>
                     </div>
@@ -82,6 +81,61 @@ function prepareUploadedImage($imageType, $postType, $page) {
     }
 } 
 ?>
+
+
+<?php  
+    function updateUploadImage($id, $imageType, $imagePath, $postType, $page, $conn) {
+        if (file_exists($imageType['tmp_name']) || is_uploaded_file($imageType['tmp_name'])) {
+            if ($imageType == $_FILES['featureImage']) {
+                $type = "f";
+            }
+            else if ($imageType == $_FILES['postImage']) {
+                $type = "p";
+            }
+
+            $imgGallary = './../public/img/imgGallery/';
+            $fileTmpName = $imageType['tmp_name'];
+            $fileExtension = pathinfo($imageType['name'])['extension'];
+            $fileName = $type.time().".$fileExtension";
+            $target = $imgGallary.$fileName;
+            $fileSize = $imageType['size'];
+
+            // Check uploaded file size
+            if ($fileSize <= 5242880) {
+                if (in_array($fileExtension, ['jpg', 'png'])) {
+                    if (move_uploaded_file($fileTmpName, $target)) {
+                        return $target;
+                    }
+                    else {
+                        header('location:edit-backend.php?status=fail&postType='.$postType.'&page='.$page.'&id='.$id);
+                    }
+                }
+                else {
+                    header('location: edit-backend.php?status=fail&postType='.$postType.'&page='.$page.'&id='.$id);
+                }
+            }
+            else {
+                header('location: edit-backend.php?status=fail&postType='.$postType.'&page='.$page.'&id='.$id);
+            }
+
+            //Remove old file
+
+            $sql1 = "SELECT * FROM $postType WHERE id = $id";
+            $result = $conn->query($sql1);
+            while ($row = $result->fetch_object()){
+                if ($row->$imageType != null) {
+                    //Remove old profile photo
+                    unlink($row->$imageType);
+                }
+            }
+        }
+        else {
+            return $imagePath;
+        }
+    }
+
+?>
+
 
 <!-- Fuction: Show Alert Message of a Query -->
 <?php   

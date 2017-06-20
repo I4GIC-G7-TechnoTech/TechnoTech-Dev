@@ -7,7 +7,7 @@
     else {
         $page = $_GET['page'];
         $postType = $_GET['postType']; 
-        $id = $_GET['postType'];
+        $id = $_GET['id'];
     }
  
     require_once('header-backend.php');
@@ -41,7 +41,6 @@
                     <div class="form-group">
                         <label><h3>Content</h3></label>
                         <textarea id="wysiwyg" name="content"><?php echo $row->content ?></textarea>
-                        
                     </div>
 
                     <div class="form-group">
@@ -51,7 +50,7 @@
                                 <img class="img-thumbnail img-feature" src="<?php echo $row->featureImage ?>">
                             </div>
                             <div class="col-md-9">
-                                <input class="form-control" type="file" name="featureImage">
+                                <input class="form-control" type="file" name="featureImage" value="<?php echo $row->postImage ?>">
                             </div>
                         </div>
                     </div>
@@ -64,7 +63,7 @@
                                 <img class="img-thumbnail img-post" src="<?php echo $row->postImage ?>">
                             </div>
                             <div class="col-md-9">
-                                <input class="form-control" type="file" name="postImage">
+                                <input class="form-control" type="file" name="postImage" value="<?php echo $row->postImage ?>">
                             </div>
                         </div>
                     </div>
@@ -75,6 +74,8 @@
                     </div>
 
                     <input class='form-control' type='hidden' value=<?php echo $id ?> name='id'>
+                    <input class='form-control' type='hidden' value=<?php echo $row->featureImage ?> name='featureImage'>
+                    <input class='form-control' type='hidden' value=<?php echo $row->postImage ?> name='postImage'>
                     <input class='form-control' type='hidden' value=<?php echo $postType ?> name='postType'>
                     <input class='form-control' type='hidden' value=<?php echo $page ?> name='page'>
 

@@ -30,23 +30,23 @@
                 <form enctype="multipart/form-data" method="POST" role='form' name="form-addPost" action="create-backend.php">
                     <div class="form-group">
                         <label><h3>Title</h3></label>
-                        <input class="form-control" type="text" name="title" placeholder="Title Here">
+                        <input class="form-control" type="text" name="title" placeholder="Title Here" required="">
                     </div>
 
                     <div class="form-group">
                         <label><h3>Content</h3></label>
-                        <textarea id="wysiwyg" name="content"></textarea>
+                        <textarea id="wysiwyg" name="content" required=""></textarea>
                         
                     </div>
 
                     <div class="form-group">
                         <label><h3>Feature Image</h3></label>
-                        <input class="form-control" type="file" name="featureImage">
+                        <input class="form-control" type="file" name="featureImage" required="">
                     </div>
 
                     <div class="form-group">
                         <label><h3>Post Image</h3></label>
-                        <input class="form-control" type="file" name="postImage">
+                        <input class="form-control" type="file" name="postImage" required="">
                     </div>
 
                     <div class="youtubeLink">

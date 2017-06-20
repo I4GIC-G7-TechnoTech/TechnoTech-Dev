@@ -36,7 +36,7 @@
                         <td><strong>Action</strong></td>
                     </thead>
                     <tbody>
-                        <?php listRecords($postType, $conn); ?>
+                        <?php listRecords($postType, $page, $conn); ?>
                     </tbody>
                     
                 </table>

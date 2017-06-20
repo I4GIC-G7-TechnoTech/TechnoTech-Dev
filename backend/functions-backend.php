@@ -2,7 +2,7 @@
 
 <!-- Function: List All Records of $postType -->
 <?php 
-function listRecords($postType, $conn) {
+function listRecords($postType, $page, $conn) {
     $sql = "SELECT * FROM $postType";
     $result = $conn->query($sql);
 
@@ -18,10 +18,20 @@ function listRecords($postType, $conn) {
                 <td> <?php echo $row->created ?> </td>
                 <td> <?php echo $row->updated ?> </td>
                 <td>
-                    <?php 
-                        showUpdateButton($id, 'update-backend.php', $title, $content, $postType);
-                        showDeleteButton($id, 'delete-backend.php', $postType); 
-                    ?>
+                    <div class="action-button">
+                        <form method="post" action="edit-backend.php">
+                            <button class="btn btn-warning btn-xs" type="submit" name="submit">
+                                <i class='fa fa-pencil-square-o' aria-hidden='true'></i>
+                            </button>
+                            <input type="hidden" name="postType" value="<?php echo $postType ?>">
+                            <input type="hidden" name="page" value="<?php echo $page ?>">
+                            <input type="hidden" name="id" value="<?php echo $id ?>">
+                        </form>
+                        
+                        <?php 
+                            showDeleteButton($id, 'delete-backend.php', $postType); 
+                        ?>
+                    </div>
                 </td>
             </tr>
     <?php
@@ -71,6 +81,61 @@ function prepareUploadedImage($imageType, $postType, $page) {
     }
 } 
 ?>
+
+
+<?php  
+    function updateUploadImage($id, $imageType, $imagePath, $postType, $page, $conn) {
+        if (file_exists($imageType['tmp_name']) || is_uploaded_file($imageType['tmp_name'])) {
+            if ($imageType == $_FILES['featureImage']) {
+                $type = "f";
+            }
+            else if ($imageType == $_FILES['postImage']) {
+                $type = "p";
+            }
+
+            $imgGallary = './../public/img/imgGallery/';
+            $fileTmpName = $imageType['tmp_name'];
+            $fileExtension = pathinfo($imageType['name'])['extension'];
+            $fileName = $type.time().".$fileExtension";
+            $target = $imgGallary.$fileName;
+            $fileSize = $imageType['size'];
+
+            // Check uploaded file size
+            if ($fileSize <= 5242880) {
+                if (in_array($fileExtension, ['jpg', 'png'])) {
+                    if (move_uploaded_file($fileTmpName, $target)) {
+                        return $target;
+                    }
+                    else {
+                        header('location:edit-backend.php?status=fail&postType='.$postType.'&page='.$page.'&id='.$id);
+                    }
+                }
+                else {
+                    header('location: edit-backend.php?status=fail&postType='.$postType.'&page='.$page.'&id='.$id);
+                }
+            }
+            else {
+                header('location: edit-backend.php?status=fail&postType='.$postType.'&page='.$page.'&id='.$id);
+            }
+
+            //Remove old file
+
+            $sql1 = "SELECT * FROM $postType WHERE id = $id";
+            $result = $conn->query($sql1);
+            while ($row = $result->fetch_object()){
+                if ($row->$imageType != null) {
+                    //Remove old profile photo
+                    unlink($row->$imageType);
+                }
+            }
+        }
+        else {
+            return $imagePath;
+        }
+    }
+
+?>
+
 
 <!-- Fuction: Show Alert Message of a Query -->
 <?php   
@@ -132,7 +197,7 @@ function prepareUploadedImage($imageType, $postType, $page) {
 
 <!-- Function: Show Update Button and Update Modal -->
 <?php 
-	function showUpdateButton($id, $action, $title, $content, $postType) { ?>
+	function displayUpdateButton($id, $action, $title, $content, $postType) { ?>
 		<!-- Update Button -->
 		<button type='button' class='btn btn-warning btn-xs' id='btn-update' data-toggle='modal' data-target=<?php echo '#update-'.$id ?>>
             <i class='fa fa-pencil-square-o' aria-hidden='true'></i>
@@ -155,7 +220,7 @@ function prepareUploadedImage($imageType, $postType, $page) {
 
 		                    <div class="form-group">
 		                        <label><h3>Content</h3></label>
-		                        <textarea class="ckeditor" id="wysiwyg" name="wysiwyg"><?php echo $content ?></textarea>
+		                        <textarea id="wysiwyg" name="content"><?php echo $content ?></textarea>
 		                    </div>
                     	</div> 
                         <div class='modal-footer'>
@@ -173,4 +238,3 @@ function prepareUploadedImage($imageType, $postType, $page) {
 	<?php
 	}
 ?>
-

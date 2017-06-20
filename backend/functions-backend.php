@@ -2,7 +2,7 @@
 
 <!-- Function: List All Records of $postType -->
 <?php 
-function listRecords($postType, $conn) {
+function listRecords($postType, $page, $conn) {
     $sql = "SELECT * FROM $postType";
     $result = $conn->query($sql);
 
@@ -18,10 +18,21 @@ function listRecords($postType, $conn) {
                 <td> <?php echo $row->created ?> </td>
                 <td> <?php echo $row->updated ?> </td>
                 <td>
-                    <?php 
-                        showUpdateButton($id, 'update-backend.php', $title, $content, $postType);
-                        showDeleteButton($id, 'delete-backend.php', $postType); 
-                    ?>
+                    <div class="action-button">
+                        <form method="post" action="edit-backend.php">
+                            <button class="btn btn-warning btn-xs" type="submit" name="submit">
+                                <i class='fa fa-pencil-square-o' aria-hidden='true'></i>
+                            </button>
+                            <input type="hidden" name="postType" value="<?php echo $postType ?>">
+                            <input type="hidden" name="page" value="<?php echo $page ?>">
+                            <input type="hidden" name="id" value="<?php echo $id ?>">
+                        </form>
+                        
+                        <?php 
+                            // showUpdateButton($id, 'edit-backend.php', $title, $content, $postType);
+                            showDeleteButton($id, 'delete-backend.php', $postType); 
+                        ?>
+                    </div>
                 </td>
             </tr>
     <?php
@@ -132,7 +143,7 @@ function prepareUploadedImage($imageType, $postType, $page) {
 
 <!-- Function: Show Update Button and Update Modal -->
 <?php 
-	function showUpdateButton($id, $action, $title, $content, $postType) { ?>
+	function displayUpdateButton($id, $action, $title, $content, $postType) { ?>
 		<!-- Update Button -->
 		<button type='button' class='btn btn-warning btn-xs' id='btn-update' data-toggle='modal' data-target=<?php echo '#update-'.$id ?>>
             <i class='fa fa-pencil-square-o' aria-hidden='true'></i>
@@ -155,7 +166,7 @@ function prepareUploadedImage($imageType, $postType, $page) {
 
 		                    <div class="form-group">
 		                        <label><h3>Content</h3></label>
-		                        <textarea class="ckeditor" id="wysiwyg" name="wysiwyg"><?php echo $content ?></textarea>
+		                        <textarea id="wysiwyg" name="content"><?php echo $content ?></textarea>
 		                    </div>
                     	</div> 
                         <div class='modal-footer'>
@@ -173,4 +184,3 @@ function prepareUploadedImage($imageType, $postType, $page) {
 	<?php
 	}
 ?>
-

@@ -5,6 +5,7 @@
     $phone = '';
     $camera = '';
     $wiki = '';
+    $user = '';
 
     /* determine native tab of navbar */
     switch ($postType) {
@@ -23,15 +24,18 @@
         case 'wiki':
             $wiki = 'class="active"';
         break;
+        case 'user':
+            $user = 'class="active"';
         default:
             $dashboard = 'class="active"';
     }
 
-    $urlNews = 'backend.php?postType=news&page=News';
+    $urlNews = 'backend.php?postType=news&page=TechNews';
     $urlComputer = 'backend.php?postType=computer&page=Computer';
     $urlPhone = 'backend.php?postType=phone&page=Phone';
     $urlCamera = 'backend.php?postType=Camera&page=Camera';
-    $urlWiki = 'backend.php?postType=wiki&page=Wiki';
+    $urlWiki = 'backend.php?postType=wiki&page=TechWiki';
+    $urlUser = 'backend.php?postType=user&page=User';
 ?>
 
 <!-- main-navbar -->
@@ -64,6 +68,10 @@
             <a href="<?php echo $urlWiki ?>" title="Wiki" <?php echo $wiki ?>>
                 <span class="fa fa-book"></span>
                 <span class="sub-menu">Wiki</span>
+            </a>
+            <a href="<?php echo $urlUser ?>" title="UserAccount" <?php echo $user ?>>
+                <span class="fa fa-user-circle"></span>
+                <span class="sub-menu">User</span>
             </a>
         </div>
     </nav>

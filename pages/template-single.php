@@ -23,8 +23,6 @@
 
         <!-- related-post -->
         <div class="related-post">
-            <h3>Related Posts</h3>
-            <hr>
             <?php listRelatedPosts($postType, $page, $id, $conn); ?>
         </div>
             

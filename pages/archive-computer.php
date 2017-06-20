@@ -22,73 +22,21 @@
 						<img class="img-responsive img-thumbnail archive-image" src="public\img\pc1.jpg" alt="image">
 					</a>
 					<p class="exerpt">
-					<?php echo $row['content'];?>
+					<?php echo substr($row['content'], 0, 50)."...";?>
+
 						<a href="single-computer-1.php?id='<?php echo $row['id'];?>'">Read More...</a>
 					</p>
 				</div>
 				 <?php
 			            }
 			     ?>
-				<div class="col-xs-12 col-md-6">
-					<a href="single-computer-2.html">
-						<h3>5 best gaming laptops 2017: highty recommended</h3>
-						<img class="img-responsive img-thumbnail archive-image" src="public/img/pc11.jpg" alt="image">
-					</a>
-					<p class="exerpt">
-						A rigorous machine that can handle any game at max settings, outperforming the latest consoles would be cheaper to build. But that’s a daunting, and frankly unnecessary, task for anyone more interested in playing games than tinkering with hardware.<a href="single-computer-2.html">Read More...</a>
-					</p>
-				</div>
-				<div class="clearfix"></div>
-			</div>
-			
-			<div class="rows row-2">
-				<div class="col-xs-12 col-md-6">
-					<a href="#">
-						<h3>Acer just launched a new gaming member</h3>
-						<img class="img-responsive img-thumbnail archive-image" src="public/img/pac3.jpg" alt="image">
-					</a>
-					<p class="exerpt">
-						 Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.<a href="#">Read More...</a>
-					</p>
-				</div>
-				<div class="col-xs-12 col-md-6">
-					<a href="#">
-						<h3>Apple vs Dell </h3>
-						<img class="img-responsive img-thumbnail archive-image" src="public/img/pac4.jpg" alt="image">
-					</a>
-					<p class="exerpt">
-					Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.<a href="#">Read More...</a>
-					</p>
-				</div>
-				<div class="clearfix"></div>
-			</div>
-			<div class="rows">
-				<div class="col-xs-12 col-md-6">
-					<a href="#">
-						<h3>Apple comes again with its new fighter</h3>
-						<img class="img-responsive img-thumbnail archive-image" src="public/img/pac5.jpg" alt="image">
-					</a>
-					<p class="exerpt">
-						 Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.<a href="#">Read More...</a>
-					</p>
-				</div>
-				<div class="col-xs-12 col-md-6">
-					<a href="#">
-						<h3>360 degree computer for 2017</h3>
-						<img class="img-responsive img-thumbnail archive-image" src="public/img/pac6.jpg" alt="image">
-					</a>
-					<p class="exerpt">
-						 Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.<a href="#">Read More...</a>
-					</p>
-				</div>
-				<div class="clearfix"></div>
-			</div>
-		</div>
+				
 		<!-- END post-list -->
-
-
+	</div>
+   
+	<div class="row">
 		<!-- pagination -->
-		<div class="text-center">
+		<div class="col-sm-12 text-center">
 			<ul class="pagination">
 				<li><a href="#"><<</a></li>
 	  			<li class="active"><a href="#">1</a></li>
@@ -100,6 +48,7 @@
 			</ul>
 		</div>
 		<!-- END pagination -->
+	</div>
 	</div>
 
 	<?php 

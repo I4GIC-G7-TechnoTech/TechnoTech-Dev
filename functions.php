@@ -1,11 +1,17 @@
 <!-- Query Fuctions -->
 <?php 
     function list2Posts($postType, $page, $conn) {
-        $num_post = 3;
-        $sql = "SELECT * FROM $postType ORDER BY updated DESC LIMIT $num_post";
+        $sql = "SELECT * FROM $postType ORDER BY updated DESC";
         $result = $conn->query($sql);
 
         $num_rows = $result->num_rows;
+        if ($num_rows<=3) {
+            $num_post = $num_rows;
+        }
+        else {
+            $num_post = 3;
+        }
+
         $row = array();
         while ($row[] = $result->fetch_object());
         ?>
@@ -38,11 +44,17 @@
 
 <?php 
     function list4Posts($postType, $page, $conn) {
-        $num_post = 5;
-        $sql = "SELECT * FROM $postType ORDER BY created DESC LIMIT $num_post";
+        $sql = "SELECT * FROM $postType ORDER BY created DESC";
         $result = $conn->query($sql);
-
         $num_rows = $result->num_rows;
+
+        if ($num_rows<=5) {
+            $num_post = $num_rows;
+        }
+        else {
+            $num_post = 5;
+        }
+
         $row = array();
         while ($row[] = $result->fetch_object());
         ?>

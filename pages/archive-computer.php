@@ -1,4 +1,5 @@
 <?php
+	
 	require_once('header.php');
 	include '../config/dbconfig.php'
 ?>
@@ -19,7 +20,7 @@
 				<div class="col-xs-12 col-md-6">
 					<a href="single-computer-1.php?id='<?php echo $row['id'];?>'">
 						<h3><?php echo $row['title'];?></h3>
-						<img class="img-responsive img-thumbnail archive-image" src="public\img\pc1.jpg" alt="image">
+						<img class="img-responsive img-thumbnail archive-image" src="<?php echo $row['featureImage'];?>" alt="image">
 					</a>
 					<p class="exerpt">
 					<?php echo substr($row['content'], 0, 50)."...";?>

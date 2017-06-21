@@ -10,7 +10,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="home-page.html">
+                <a class="navbar-brand" href="home-page.php">
                     <img alt="TechnoTech" src="" alt="logo">
                 </a>
             </div>
@@ -19,12 +19,12 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li><a href="index-home.php">Home <span class="sr-only">(current)</span></a></li>
-                    <li><a href="archive-news.html">News <span class="sr-only">(current)</span></a></li>
-                    <li><a href="archive-wiki.html">Tech Wiki <span class="sr-only">(current)</span></a></li>
-                    <li><a href="archive-phone.html">Phone <span class="sr-only">(current)</span></a></li>
-                    <li><a href="archive-computer.html">Computer <span class="sr-only">(current)</span></a></li>
-                    <li><a href="archive-camera.html">Camera <span class="sr-only">(current)</span></a></li>
-                    <li><a href="about-us.html">About us <span class="sr-only">(current)</span></a></li>
+                    <li><a href="archive-news.php">News <span class="sr-only">(current)</span></a></li>
+                    <li><a href="archive-wiki.php">Tech Wiki <span class="sr-only">(current)</span></a></li>
+                    <li><a href="archive-phone.php">Phone <span class="sr-only">(current)</span></a></li>
+                    <li><a href="archive-computer.php">Computer <span class="sr-only">(current)</span></a></li>
+                    <li><a href="archive-camera.php">Camera <span class="sr-only">(current)</span></a></li>
+                    <li><a href="about-us.php">About us <span class="sr-only">(current)</span></a></li>
                 </ul>
                 <form class="navbar-form navbar-right" method="POST" name="search-form" action="search.php">
                     <div class="form-group">

@@ -19,7 +19,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li><a href="index-home.php">Home <span class="sr-only">(current)</span></a></li>
-                    <li><a href="archive-news.php">News <span class="sr-only">(current)</span></a></li>
+                    <li><a href="news-archive.php">News <span class="sr-only">(current)</span></a></li>
                     <li><a href="archive-wiki.php">Tech Wiki <span class="sr-only">(current)</span></a></li>
                     <li><a href="archive-phone.php">Phone <span class="sr-only">(current)</span></a></li>
                     <li><a href="archive-computer.php">Computer <span class="sr-only">(current)</span></a></li>

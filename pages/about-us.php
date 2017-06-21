@@ -13,7 +13,7 @@
 			<h2>Background</h2>
 			<p>
 				We are students from Institute of Technology of Cambodia in the department of Information and 
-				Communication. The reason why we participated in creating the website are: The first reason is that we want to provide Cambodian people fast and clear intformation new Technology. It will also help people to have the haboit of reading. The second reason is that we want to encourage people to be curious about informatiom which is related to the technology - life must be updated by the technology. The last reason is that we want to entertain and share with people about the modern world. Hope you guys support our website.
+				Communication Engineering. The reason why we participated in creating the website are: The first reason is that we want to provide Cambodian people fast and clear intformation new Technology. It will also help people to have the haboit of reading. The second reason is that we want to encourage people to be curious about informatiom which is related to the technology - life must be updated by the technology. The last reason is that we want to entertain and share with people about the modern world. Hope you guys support our website.
 			</p>
 		</div>
 		<hr/>
@@ -25,7 +25,7 @@
 			<div class="rows text-center">
 				<div class="col-xs-12 col-sm-6 col-md-3">
 					<div class="col-xs-7 col-sm-7 col-md-12">
-						<img class="img-responsive img-circle img-profile" src="public/img/nida.jpg" alt="co-founder">
+						<img class="img-responsive img-circle img-profile" src="./../public/img/imgAbout/nida.jpg" alt="co-founder">
 					</div>
 					<div class="col-xs-5 col-sm-5 col-md-12">
 						<h4>VORNG Channida</h4>
@@ -33,7 +33,7 @@
 				</div>
 				<div class="col-xs-12 col-sm-6 col-md-3">
 					<div class="col-xs-7 col-sm-7 col-md-12">
-						<img class="img-responsive img-circle img-profile" src="public/img/mardy.jpg" alt="co-founder">
+						<img class="img-responsive img-circle img-profile" src="./../public/img/imgAbout/mardy.jpg" alt="co-founder">
 					</div>
 					<div class="col-xs-5 col-sm-5 col-md-12">
 						<h4>SAM AN Mardy</h4>
@@ -41,7 +41,7 @@
 				</div>
 				<div class="col-xs-12 col-sm-6 col-md-3">
 					<div class="col-xs-7 col-sm-7 col-md-12">
-						<img class="img-responsive img-circle img-profile" src="public/img/sothea.jpg" alt="co-founder">
+						<img class="img-responsive img-circle img-profile" src="./../public/img/imgAbout/sothea.jpg" alt="co-founder">
 					</div>
 					<div class="col-xs-5 col-sm-5 col-md-12">
 						<h4>SAK Sothea</h4>
@@ -49,7 +49,7 @@
 				</div>
 				<div class="col-xs-12 col-sm-6 col-md-3">
 					<div class="col-xs-7 col-sm-7 col-md-12">
-						<img class="img-responsive img-circle img-profile" src="public/img/prasal1.jpg" alt="co-founder">
+						<img class="img-responsive img-circle img-profile" src="./../public/img/imgAbout/prasal1.jpg" alt="co-founder">
 					</div>
 					<div class="col-xs-5 col-sm-5 col-md-12">
 						<h4>SOEURN Prasal</h4>

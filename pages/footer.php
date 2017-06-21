@@ -14,12 +14,12 @@
                 <div class="col-xs-12 col-md-3">
                     <h4>NAVEGATION</h4>
                     <ul class="footer-navbar">
-                        <li><a href="home-page.html">Home</a></li>
-                        <li><a href="archive-news.html">News</a></li>
-                        <li><a href="archive-wiki.html">Tech Wiki</a></li>
-                        <li><a href="archive-phone.html">Phone</a></li>
-                        <li><a href="archive-computer.html">Computer</a></li>
-                        <li><a href="archive-camera.html">Camera</a></li>
+                        <li><a href="home-page.php">Home</a></li>
+                        <li><a href="archive-news.php">News</a></li>
+                        <li><a href="archive-wiki.php">Tech Wiki</a></li>
+                        <li><a href="archive-phone.php">Phone</a></li>
+                        <li><a href="archive-computer.php">Computer</a></li>
+                        <li><a href="archive-camera.php">Camera</a></li>
                     </ul>
                 </div>
             </div>

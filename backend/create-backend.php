@@ -19,8 +19,8 @@
 	$result = $conn->query($sql);
 
 	if ($result) {
-		$featureImage = prepareUploadedImage($_FILES['featureImage'], $postType, $page);
-		$postImage = prepareUploadedImage($_FILES['postImage'], $postType, $page);
+		$featureImage = prepareUploadedImage('featureImage', $_FILES['featureImage'], $postType, $page);
+		$postImage = prepareUploadedImage('postImage', $_FILES['postImage'], $postType, $page);
 
 		$sql = "UPDATE $postType SET featureImage = '$featureImage', postImage = '$postImage' WHERE title = '$title'";
 		

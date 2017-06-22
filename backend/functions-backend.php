@@ -11,6 +11,7 @@ function listRecords($postType, $page, $conn) {
             $id = $row->id; 
             $title = $row->title;
             $content = $row->content;
+
         ?>
             <tr>
                 <td> <?php echo $row->title ?> </td>
@@ -43,23 +44,73 @@ function listRecords($postType, $page, $conn) {
 }
 ?>
 
+<?php  
+    function listAccount($conn) {
+        $sql = "SELECT * FROM user";
+        $result = $conn->query($sql);
+
+        if ($result) {
+            while ($row = $result->fetch_object()) {
+                $id = $row->id; 
+                $fullname = $row->fullname;
+                $username = $row->username;
+                $password = $row->password;
+                $created = $row->created;
+                $updated = $row->updated;
+            ?>
+                <tr>
+                    <td> <?php echo $fullname ?> </td>
+                    <td> <?php echo $username ?> </td>
+                    <td> Will Specified Soon </td>
+                    <td> <?php echo $created ?> </td>
+                    <td> <?php echo $updated ?> </td>
+                    <td>
+                        <div class="action-button">
+                            <form method="post" action="edit-backend.php">
+                                <button class="btn btn-warning btn-xs" type="submit" name="submit">
+                                    <i class='fa fa-pencil-square-o' aria-hidden='true'></i>
+                                </button>
+                                <input type="hidden" name="postType" value="user">
+                                <input type="hidden" name="page" value="User">
+                                <input type="hidden" name="id" value="<?php echo $id ?>">
+                            </form>
+                            
+                            <?php 
+                                showDeleteButton($id, 'delete-backend.php', 'user'); 
+                            ?>
+                        </div>
+                    </td>
+                </tr>
+        <?php
+            }
+        }
+        else {
+            echo "No Entry Found!";
+        }
+    }
+?>
+
 <!-- Function: Prepare PATH for Upload Image -->
 <?php 
-function prepareUploadedImage($imageType, $postType, $page) {
+function prepareUploadedImage($imageType, $imageFile, $postType, $page) {
     if (isset($imageType)) {
-        if ($imageType == $_FILES['featureImage']) {
+        $imgGallary = './../public/img/imgGallery/';
+        $locationPath = "add-backend.php?status=fail&postType='.$postType.'&page='.$page";
+
+        if ($imageType == 'featureImage') {
             $type = "f";
+            $imageFile == $_FILES['featureImage'];
         }
-        else if ($imageType == $_FILES['postImage']) {
+        else if ($imageType == 'postImage') {
             $type = "p";
+            $imageFile = $_FILES['postImage'];
         }
 
-        $imgGallary = './../public/img/imgGallery/';
-        $fileTmpName = $imageType['tmp_name'];
-        $fileExtension = pathinfo($imageType['name'])['extension'];
+        $fileTmpName = $imageFile['tmp_name'];
+        $fileExtension = pathinfo($imageFile['name'])['extension'];
         $fileName = $type.time().".$fileExtension";
         $target = $imgGallary.$fileName;
-        $fileSize = $imageType['size'];
+        $fileSize = $imageFile['size'];
 
         // Check uploaded file size
         if ($fileSize <= 5242880) {
@@ -68,15 +119,15 @@ function prepareUploadedImage($imageType, $postType, $page) {
                     return $target;
                 }
                 else {
-                    header('location:add-backend.php?status=fail&postType='.$postType.'&page='.$page);
+                    header("location: $locationPath");
                 }
             }
             else {
-                header('location: add-backend.php?status=fail&postType='.$postType.'&page='.$page);
+                header("location: $locationPath");
             }
         }
         else {
-            header('location: add-backend.php?status=fail&postType='.$postType.'&page='.$page);
+            header("location: $locationPath");
         }
     }
 } 
@@ -84,13 +135,15 @@ function prepareUploadedImage($imageType, $postType, $page) {
 
 
 <?php  
-    function updateUploadImage($id, $imageType, $imagePath, $postType, $page, $conn) {
+    function updateUploadImage($id, $imageType, $imageFile, $imagePath, $postType, $page, $conn) {
         if (file_exists($imageType['tmp_name']) || is_uploaded_file($imageType['tmp_name'])) {
-            if ($imageType == $_FILES['featureImage']) {
+            if ($imageType == 'featureImage') {
                 $type = "f";
+                $imageFile = $_FILES['featureImage'];
             }
-            else if ($imageType == $_FILES['postImage']) {
+            else if ($imageType == 'postImage') {
                 $type = "p";
+                $imageFile = $_FILES['postImage'];
             }
 
             $imgGallary = './../public/img/imgGallery/';
@@ -119,7 +172,6 @@ function prepareUploadedImage($imageType, $postType, $page) {
             }
 
             //Remove old file
-
             $sql1 = "SELECT * FROM $postType WHERE id = $id";
             $result = $conn->query($sql1);
             while ($row = $result->fetch_object()){
@@ -135,7 +187,6 @@ function prepareUploadedImage($imageType, $postType, $page) {
     }
 
 ?>
-
 
 <!-- Fuction: Show Alert Message of a Query -->
 <?php   

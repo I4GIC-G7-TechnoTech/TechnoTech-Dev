@@ -4,7 +4,7 @@
 		$_SESSION['username'] = $_COOKIE['username'];
 		header('Location: dashboard.php');
 	}
-
+	$page = 'Login';
 	require_once('header-backend.php');
 ?>
 
@@ -13,7 +13,7 @@
 		<h1 id="site-title"> TechnoTech Dashboard </h1>
 		<hr id="headline">
 
-		<form class="form-group" role='form' method="POST" name="loginForm" action="accountLogin.php">
+		<form class="form-group" role='form' method="POST" name="loginForm" action="accountLogin-backend.php">
 			<div class="form-group">
 				<label>Username</label>
 				<input class="form-control" type="text" name="username" autofocus='autofocus' placeholder="Username" required>

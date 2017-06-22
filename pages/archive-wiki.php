@@ -1,6 +1,6 @@
 <?php
-	$postType = 'computer';
-	$page = 'Computer';
+	$postType = 'wiki';
+	$page = 'Tech Wiki';
 
 	require_once('header.php');
 	include '../config/dbconfig.php'

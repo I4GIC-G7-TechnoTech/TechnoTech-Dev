@@ -10,7 +10,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="home-page.php">
+                <a class="navbar-brand" href="index-home.php">
                     <img alt="TechnoTech" src="" alt="logo">
                 </a>
             </div>

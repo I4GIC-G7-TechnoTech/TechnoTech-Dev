@@ -27,8 +27,9 @@
 								<img class="img-responsive img-thumbnail archive-image" src="<?php echo $row['featureImage']; ?>" alt="image">
 							</a>
 							<p class="exerpt">
-							<?php echo substr($row['content'], 0, 360);?>
-								<a href="<?php echo $postUrl; ?>">Read More...</a>
+
+							<?php echo substr($row['content'], 0, 300);?>
+								<a href="<?php echo $postUrl; ?>'">Read More...</a>
 							</p>
 						</div>
 

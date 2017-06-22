@@ -1,6 +1,6 @@
 <?php
-	$postType = 'computer';
-	$page = 'Computer';
+	$postType = 'phone';
+	$page = 'Phone';
 
 	require_once('header.php');
 	include '../config/dbconfig.php'

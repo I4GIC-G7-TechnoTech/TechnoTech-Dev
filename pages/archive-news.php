@@ -1,6 +1,6 @@
 <?php
-	$postType = 'computer';
-	$page = 'Computer';
+	$postType = 'news';
+	$page = 'Tech News';
 
 	require_once('header.php');
 	include '../config/dbconfig.php'

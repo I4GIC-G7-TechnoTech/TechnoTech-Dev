@@ -14,8 +14,8 @@
                 <div class="col-xs-12 col-md-3">
                     <h4>NAVEGATION</h4>
                     <ul class="footer-navbar">
-                        <li><a href="home-page.php">Home</a></li>
-                        <li><a href="archive-news.php">News</a></li>
+                        <li><a href="index-home.php">Home</a></li>
+                        <li><a href="archive-news.php">Tech News</a></li>
                         <li><a href="archive-wiki.php">Tech Wiki</a></li>
                         <li><a href="archive-phone.php">Phone</a></li>
                         <li><a href="archive-computer.php">Computer</a></li>

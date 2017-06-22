@@ -11,23 +11,27 @@
             <hr>
         </div>
 
-        <div class="phone-content">
+        <div class="content phone-content">
             <div class="col-xs-12 col-md-12">
                 <?php echo $row->content ?>
             </div>
-            <div class="row images">
-                <div class="col-xs-12 col-md-6">
-                    <img class="img-thumbnail" src="<?php echo $row->featureImage ?>" alt="featureImage">
-                </div>
-                <div class="col-xs-12 col-md-6">
-                    <img class="img-thumbnail" src="<?php echo $row->postImage ?>" alt="postImage">
-                </div>
+            <div class="col-xs-12 col-md-6">
+                <img class="img-thumbnail" src="<?php echo $row->featureImage ?>" alt="featureImage">
             </div>
-            <?php if ($row->youtubeLink) { ?>
-            <div class="embed-responsive embed-responsive-16by9 video-post">
-                <?php echo $row->youtubeLink ?>
+            <div class="col-xs-12 col-md-6">
+                <img class="img-thumbnail" src="<?php echo $row->postImage ?>" alt="postImage">
             </div>
-            <?php } ?>
+            
+        <?php 
+            if ($row->youtubeLink) { 
+        ?>
+                <br>
+                <div class="embed-responsive embed-responsive-16by9 video-post">
+                    <?php echo $row->youtubeLink ?>
+                </div>
+        <?php 
+            } 
+        ?>
             <div class="clearfix"></div>
         </div>
 

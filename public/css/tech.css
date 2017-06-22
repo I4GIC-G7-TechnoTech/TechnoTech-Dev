@@ -19,8 +19,20 @@ a.social-media {
 	/*max-height: 125px;*/
 }
 
-.archive-title{
+div.archive-title{
+	margin: 0 auto 0 auto;
 	margin-top: 40px;
+	width: 90%;
+}
+
+div.content {
+	margin: auto;
+	width: 90%;
+}
+
+div.embed-responsive iframe {
+	height: 70% !important;
+	margin: auto;
 }
 
 body {

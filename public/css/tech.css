@@ -25,7 +25,7 @@ div.archive-title{
 
 div.content {
 	margin: auto;
-	width: 90%;
+	width: 95%;
 }
 
 div.embed-responsive iframe {
@@ -36,7 +36,6 @@ div.embed-responsive iframe {
 div.single-title {
 	margin: auto;
 	margin-top: 40px;
-	width: 90%;
 }
 
 body {

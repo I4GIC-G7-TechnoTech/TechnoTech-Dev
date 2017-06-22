@@ -19,27 +19,56 @@
             ?>
             <div class="head-section">
                 <h1><?php echo $page ?></h1>
-                <form method="POST" action="add-backend.php">
-                    <input type="hidden" name="postType" value="<?php echo $postType ?>">
-                    <input type="hidden" name="page" value="<?php echo $page ?>">
-                    <button class="btn btn-primary" type="submit" name="submit">Add <?php echo $page ?></button>
-                </form>
-                <hr>
-            </div>
-            <div class= "<?php echo 'list'.$postType ?>">
-                <table class="table table-striped">
-                    <thead>
-                        <td><strong>Title</strong></td>
-                        <td><strong>Author</strong></td>
-                        <td><strong>Created On</strong></td>
-                        <td><strong>Updated On</strong></td>
-                        <td><strong>Action</strong></td>
-                    </thead>
-                    <tbody>
-                        <?php listRecords($postType, $page, $conn); ?>
-                    </tbody>
-                    
-                </table>
+                <?php 
+                if ($postType != 'user') { 
+                ?>
+                    <form method="POST" action="add-backend.php">
+                        <input type="hidden" name="postType" value="<?php echo $postType ?>">
+                        <input type="hidden" name="page" value="<?php echo $page ?>">
+                        <button class="btn btn-primary" type="submit" name="submit">Add <?php echo $page ?></button>
+                    </form>
+                    <hr>
+                    <div class= "<?php echo 'list'.$postType ?>">
+                        <table class="table table-striped">
+                            <thead>
+                                <td><strong>Title</strong></td>
+                                <td><strong>Author</strong></td>
+                                <td><strong>Created On</strong></td>
+                                <td><strong>Updated On</strong></td>
+                                <td><strong>Action</strong></td>
+                            </thead>
+                            <tbody>
+                                <?php listRecords($postType, $page, $conn); ?>
+                            </tbody>
+                        </table>
+                    </div>
+                <?php 
+                } else {
+                ?>
+                    <form method="POST" action="addUser-backend.php">
+                        <input type="hidden" name="postType" value="<?php echo $postType ?>">
+                        <input type="hidden" name="page" value="<?php echo $page ?>">
+                        <button class="btn btn-primary" type="submit" name="submit">Add <?php echo $page ?></button>
+                    </form>
+                    <hr>
+                    <div class= "<?php echo 'list'.$postType ?>">
+                        <table class="table table-striped">
+                            <thead>
+                                <td><strong>Full Name</strong></td>
+                                <td><strong>Username</strong></td>
+                                <td><strong>Previllage</strong></td>
+                                <td><strong>Created On</strong></td>
+                                <td><strong>Updated On</strong></td>
+                                <td><strong>Action</strong></td>
+                            </thead>
+                            <tbody>
+                                <?php listAccount($conn); ?>
+                            </tbody>
+                        </table>
+                    </div>
+                <?php
+                }
+                ?>
             </div>
         </section>
     </div>

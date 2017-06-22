@@ -20,9 +20,7 @@ a.social-media {
 }
 
 div.archive-title{
-	margin: 0 auto 0 auto;
 	margin-top: 40px;
-	width: 90%;
 }
 
 div.content {
@@ -33,6 +31,12 @@ div.content {
 div.embed-responsive iframe {
 	height: 70% !important;
 	margin: auto;
+}
+
+div.single-title {
+	margin: auto;
+	margin-top: 40px;
+	width: 90%;
 }
 
 body {

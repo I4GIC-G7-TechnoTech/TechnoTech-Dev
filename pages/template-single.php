@@ -6,7 +6,7 @@
 ?>
 
         <!-- Title -->
-        <div class="archive-title">
+        <div class="single-title">
             <h2><?php echo $row->title ?></h2>
             <hr>
         </div>

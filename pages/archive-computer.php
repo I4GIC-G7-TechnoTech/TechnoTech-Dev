@@ -23,7 +23,7 @@
 						<img class="img-responsive img-thumbnail archive-image" src="<?php echo $row['featureImage'];?>" alt="image">
 					</a>
 					<p class="exerpt">
-					<?php echo substr($row['content'], 0, 50)."...";?>
+					<?php echo substr($row['content'], 0, 70);?>
 
 						<a href="single-computer-1.php?id='<?php echo $row['id'];?>'">Read More...</a>
 					</p>

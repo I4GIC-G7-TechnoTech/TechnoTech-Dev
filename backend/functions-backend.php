@@ -133,10 +133,9 @@ function prepareUploadedImage($imageType, $imageFile, $postType, $page) {
 } 
 ?>
 
-
 <?php  
     function updateUploadImage($id, $imageType, $imageFile, $imagePath, $postType, $page, $conn) {
-        if (file_exists($imageType['tmp_name']) || is_uploaded_file($imageType['tmp_name'])) {
+        if (file_exists($imageFile['tmp_name']) || is_uploaded_file($imageFile['tmp_name'])) {
             if ($imageType == 'featureImage') {
                 $type = "f";
                 $imageFile = $_FILES['featureImage'];
@@ -147,11 +146,11 @@ function prepareUploadedImage($imageType, $imageFile, $postType, $page) {
             }
 
             $imgGallary = './../public/img/imgGallery/';
-            $fileTmpName = $imageType['tmp_name'];
-            $fileExtension = pathinfo($imageType['name'])['extension'];
+            $fileTmpName = $imageFile['tmp_name'];
+            $fileExtension = pathinfo($imageFile['name'])['extension'];
             $fileName = $type.time().".$fileExtension";
             $target = $imgGallary.$fileName;
-            $fileSize = $imageType['size'];
+            $fileSize = $imageFile['size'];
 
             // Check uploaded file size
             if ($fileSize <= 5242880) {

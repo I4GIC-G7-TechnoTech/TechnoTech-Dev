@@ -1,7 +1,7 @@
 <?php  
 	require_once('./../config/dbconfig.php');
 	require_once('functions-backend.php');
-	echo "hello";
+	
 	if (isset($_POST['updatePost'])) {
 		$id = $_POST['id'];
 		$title = $_POST['title'];
@@ -17,9 +17,9 @@
 		$imageType = $_FILES['postImage'];	
 
 
-		$featureImage = updateUploadImage($id, $_FILES['featureImage'], $featureImage, $postType, $page, $conn);
+		$featureImage = updateUploadImage($id, 'featureImage', $_FILES['featureImage'], $featureImage, $postType, $page, $conn);
 
-		$postImage = updateUploadImage($id, $_FILES['postImage'], $postImage, $postType, $page, $conn);
+		$postImage = updateUploadImage($id, 'postImage', $_FILES['postImage'], $postImage, $postType, $page, $conn);
 
 
 		$sql = "UPDATE $postType SET title = '$title', content = '$content', featureImage = '$featureImage', postImage = '$postImage', youtubeLink = '$youtubeLink', updated = NOW() WHERE id = $id";

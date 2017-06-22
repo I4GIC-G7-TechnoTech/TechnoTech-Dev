@@ -70,7 +70,7 @@
 
                     <div class="youtubeLink">
                         <label><h3>Embeded Video</h3></label>
-                        <input class="form-control" type="text" name="youtubeLink" value="<?php echo $row->youtubeLink ?>">
+                        <input class="form-control" type="text" name="youtubeLink" value='<?php echo $row->youtubeLink ?>'>
                     </div>
 
                     <input class='form-control' type='hidden' value=<?php echo $id ?> name='id'>

@@ -27,7 +27,7 @@
 							</a>
 							<p class="exerpt">
 							<?php echo substr($row['content'], 0, 360);?>
-								<a href="<?php echo $postUrl; ?>'">Read More...</a>
+								<a href="<?php echo $postUrl; ?>">Read More...</a>
 							</p>
 						</div>
 				 <?php

@@ -1,7 +1,7 @@
 <?php
 	$postType = 'camera';
 	$page = 'Camera';
-	define('EXCERPT_LENGTH', 360);
+	define('EXCERPT_LENGTH', 320);
 
 	require_once('header.php');
 	include '../config/dbconfig.php'

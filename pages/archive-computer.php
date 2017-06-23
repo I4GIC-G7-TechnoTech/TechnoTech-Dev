@@ -1,6 +1,7 @@
 <?php
 	$postType = 'computer';
 	$page = 'Computer';
+	define('EXCERPT_LENGTH', 360);
 
 	require_once('header.php');
 	include '../config/dbconfig.php'

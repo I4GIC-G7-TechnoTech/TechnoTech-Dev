@@ -1,7 +1,8 @@
 <?php
 	$postType = 'phone';
 	$page = 'Phone';
-
+	define('EXCERPT_LENGTH', 360);
+	
 	require_once('header.php');
 	include '../config/dbconfig.php'
 ?>

@@ -1,6 +1,7 @@
 <?php
 	$postType = 'news';
 	$page = 'Tech News';
+	define('EXCERPT_LENGTH', 360);
 
 	require_once('header.php');
 	include '../config/dbconfig.php'

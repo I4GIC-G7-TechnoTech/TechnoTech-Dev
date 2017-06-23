@@ -111,7 +111,7 @@
             $num_post = $num_rows;
         }
         else {
-            $num_post = 5;
+            $num_post = 4;
         }
 
         if ($num_post>=1) {

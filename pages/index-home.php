@@ -38,7 +38,7 @@
                 <div class="col-xs-12 col-md-8">
                     <p>
                         <?php echo substr(($row->content), 0, EXCERPT_LENGTH); ?>
-                        <a href="<?php echo $postUrl; ?>'">Read More...</a>
+                        <a href="<?php echo $postUrl; ?>">Read More...</a>
                     </p>
                 </div>
                 <div class="clearfix"></div>
@@ -73,7 +73,7 @@
                 <div class="col-xs-12 col-md-8">
                     <p>
                         <?php echo substr(($row->content), 0, EXCERPT_LENGTH); ?>
-                        <a href="<?php echo $postUrl; ?>'">Read More...</a>
+                        <a href="<?php echo $postUrl; ?>">Read More...</a>
                     </p>
                 </div>
                 <div class="col-xs-12 col-md-4">
@@ -191,7 +191,7 @@
                 <div class="col-xs-12 col-md-8">
                     <p>
                         <?php echo substr(($row->content), 0, EXCERPT_LENGTH); ?>
-                        <a href="<?php echo $postUrl; ?>'">Read More...</a>
+                        <a href="<?php echo $postUrl; ?>">Read More...</a>
                     </p>
                 </div>
                 <div class="col-xs-12 col-md-4">

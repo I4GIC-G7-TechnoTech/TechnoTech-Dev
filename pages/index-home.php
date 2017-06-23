@@ -5,7 +5,7 @@
     require_once('./../functions.php');
     require_once('./../config/dbconfig.php');
 
-    define('EXCERPT_LENGTH', 360);
+    define('EXCERPT_LENGTH', 320);
 ?>
 
 <body>

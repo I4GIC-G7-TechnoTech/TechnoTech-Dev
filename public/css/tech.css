@@ -197,6 +197,9 @@ span.tags {
 	padding: 3px 4px 2px 4px;
 	text-transform: uppercase; 
 }
+span.tags:hover {
+	text-decoration: none;
+}
 
 .sr-only:hover {
 	background-color: white !important;

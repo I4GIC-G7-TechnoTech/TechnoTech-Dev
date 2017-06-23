@@ -4,6 +4,8 @@
     require_once('header.php'); 
     require_once('./../functions.php');
     require_once('./../config/dbconfig.php');
+
+    define('EXCERPT_LENGTH', 360);
 ?>
 
 <body>
@@ -34,9 +36,9 @@
                     </a>
                 </div>
                 <div class="col-xs-12 col-md-8">
-                    <?php echo $row->content ?>
                     <p>
-                        <a href="<?php echo $postUrl ?>">Read More...</a>
+                        <?php echo substr(($row->content), 0, EXCERPT_LENGTH); ?>
+                        <a href="<?php echo $postUrl; ?>'">Read More...</a>
                     </p>
                 </div>
                 <div class="clearfix"></div>
@@ -69,9 +71,9 @@
                     <h3><?php echo $row->title ?></h3>
                 </a>
                 <div class="col-xs-12 col-md-8">
-                    <?php echo $row->content ?>
                     <p>
-                        <a href="<?php echo $postUrl ?>">Read More...</a>
+                        <?php echo substr(($row->content), 0, EXCERPT_LENGTH); ?>
+                        <a href="<?php echo $postUrl; ?>'">Read More...</a>
                     </p>
                 </div>
                 <div class="col-xs-12 col-md-4">
@@ -94,8 +96,8 @@
         <br>
         <br>
         <!-- phone-and-computer -->
+
         <div class="line section-phone-and-computer">
-            
             <!-- phone -->
             <div class="col-xs-12 col-md-6 phone"> 
                 <h2 class="home-section">Phone</h2>
@@ -187,9 +189,9 @@
                     <h3><?php echo $row->title ?></h3>
                 </a>
                 <div class="col-xs-12 col-md-8">
-                    <?php echo $row->content ?>
                     <p>
-                        <a href="<?php echo $postUrl ?>">Read More...</a>
+                        <?php echo substr(($row->content), 0, EXCERPT_LENGTH); ?>
+                        <a href="<?php echo $postUrl; ?>'">Read More...</a>
                     </p>
                 </div>
                 <div class="col-xs-12 col-md-4">

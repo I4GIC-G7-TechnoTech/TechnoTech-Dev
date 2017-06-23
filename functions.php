@@ -168,10 +168,12 @@
                     
                     $postUrl = 'single.php?postType='.$postTypes[$i].'&page='.$pages[$i].'&id='.$row->id;
                 ?>
-                    <div class="col-xs-12 col-md-4 sub-post">
+                    <div class="col-xs-12 col-md-3 sub-post">
                         <div class="col-xs-12 col-md-12">
                             <a href="<?php echo $postUrl ?>">
-                                <h4 class="post-tilte"><?php echo '<span class="tags '.$postTypes[$i].'">'.$postTypes[$i].'</span>'." ".$row->title ?></h4>
+                                <h4 class="post-tilte">
+                                    <?php echo '<span class="tags '.$postTypes[$i].'">'.$postTypes[$i].'</span>'." ".$row->title ?>
+                                </h4>
                             </a>
                         </div>
                         <div class="col-xs-12 col-md-12">

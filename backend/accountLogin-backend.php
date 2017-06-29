@@ -1,6 +1,7 @@
 <?php 
 	require_once('./../config/dbconfig.php');
 	require_once('salt.php');
+	// Mardy
 
 	if (isset($_POST['login']) && $_POST['username']!='') {
 		$username = $_POST['username'];
